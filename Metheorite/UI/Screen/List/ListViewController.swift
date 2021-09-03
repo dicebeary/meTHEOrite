@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import Resolver
 
-final class ListViewController: UIViewController, UISearchBarDelegate, Resolving {
+final class ListViewController: UIViewController, UISearchBarDelegate {
     // MARK: - ViewModel
     @Injected var viewModel: ListViewModel
 
@@ -26,7 +26,7 @@ final class ListViewController: UIViewController, UISearchBarDelegate, Resolving
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.navigate(from: self)
+//        viewModel.navigate(from: self)
         setupTableView()
         setupNavigationBar()
         setupBindings()
@@ -34,16 +34,16 @@ final class ListViewController: UIViewController, UISearchBarDelegate, Resolving
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.title = Localization.newsListTitle
-        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
-        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
+//        self.tabBarController?.title = Localization.newsListTitle
+//        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.title = ""
-        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = false
-        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = true
+//        self.tabBarController?.title = ""
+//        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = false
+//        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = true
     }
 }
 
@@ -96,26 +96,26 @@ private extension ListViewController {
 
     func setupNavigationBar() {
         // Setup Title styles
-        self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 17.0)]
-        self.tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 36.0)]
+//        self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 17.0)]
+//        self.tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 36.0)]
+//
+//        // Setup search bar functionalities
+//        searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.delegate = self
+//        searchController.searchBar.sizeToFit()
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.hidesNavigationBarDuringPresentation = true
+//        searchController.searchBar.placeholder = Localization.newsListSearchPlaceholder
+//        self.definesPresentationContext = true
+//        self.tabBarController?.navigationItem.searchController = searchController
 
-        // Setup search bar functionalities
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
-        searchController.searchBar.sizeToFit()
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.searchBar.placeholder = Localization.newsListSearchPlaceholder
-        self.definesPresentationContext = true
-        self.tabBarController?.navigationItem.searchController = searchController
-
-        searchController.searchBar.rx.text
-            .bind(to: searchTextRelay)
-            .disposed(by: bag)
-
-        searchController.searchBar.rx.cancelButtonClicked
-            .map { _ in return nil }
-            .bind(to: searchTextRelay)
-            .disposed(by: bag)
+//        searchController.searchBar.rx.text
+//            .bind(to: searchTextRelay)
+//            .disposed(by: bag)
+//
+//        searchController.searchBar.rx.cancelButtonClicked
+//            .map { _ in return nil }
+//            .bind(to: searchTextRelay)
+//            .disposed(by: bag)
     }
 }

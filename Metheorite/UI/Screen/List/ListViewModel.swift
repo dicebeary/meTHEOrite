@@ -39,12 +39,12 @@ extension ListViewModel: ViewModelManipulator {
         return Output(screenData: screenData)
     }
 
-    func navigate(from viewController: UIViewController) {
-        newsInteractor.getSelectedArticle()
-            .subscribe { [weak self] _ in
-                self?.navigator.push(from: viewController, to: UIConstants.StoryboardIdentifier.details)
-            }.disposed(by: bag)
-    }
+//    func navigate(from viewController: UIViewController) {
+//        newsInteractor.getSelectedArticle()
+//            .subscribe { [weak self] _ in
+//                self?.navigator.push(from: viewController, to: UIConstants.StoryboardIdentifier.details)
+//            }.disposed(by: bag)
+//    }
 }
 
 // MARK: - Event handling

@@ -1,5 +1,5 @@
 //
-//  DetailsViewModel.swift
+//  MapViewModel.swift
 //  Fortnightly
 //
 //  Created by Vajda Kristóf on 2021. 07. 17..
@@ -10,20 +10,20 @@ import RxSwift
 import RxCocoa
 import Resolver
 
-final class DetailsViewModel {
+final class MapViewModel {
     @Injected private var newsInteractor: NewsInteractorInterface
     
     private let bag = DisposeBag()
 }
 
 // MARK: - Transform data flow
-extension DetailsViewModel: ViewModelManipulator {
+extension MapViewModel: ViewModelManipulator {
     func navigate(from viewController: UIViewController) {}
 
     struct Input {}
 
     struct Output {
-        let screenData: DetailsViewController.Data
+        let screenData: MapViewController.Data
     }
 
     func map(from input: Input) -> Output {
@@ -33,12 +33,12 @@ extension DetailsViewModel: ViewModelManipulator {
 }
 
 // MARK: - Event handling
-private extension DetailsViewModel {
+private extension MapViewModel {
 }
 
 // MARK: - Output helper methods
-private extension DetailsViewModel {
-    func getScreenData() -> DetailsViewController.Data {
+private extension MapViewModel {
+    func getScreenData() -> MapViewController.Data {
         let imageUrl = newsInteractor.getSelectedArticle()
             .map(\.imageURL)
             .asDriver(onErrorJustReturn: nil)
@@ -60,6 +60,6 @@ private extension DetailsViewModel {
         let content = newsInteractor.getSelectedArticle()
             .map(\.content)
             .asDriver(onErrorJustReturn: "")
-        return DetailsViewController.Data(imageUrl: imageUrl, language: language, category: category, title: title, content: content)
+        return MapViewController.Data(imageUrl: imageUrl, language: language, category: category, title: title, content: content)
     }
 }

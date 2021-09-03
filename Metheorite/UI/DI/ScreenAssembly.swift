@@ -11,7 +11,7 @@ import Resolver
 public extension Resolver {
     static func assembleScreen() {
         register { ListViewModel() }
-        register { DetailsViewModel() }
+        register { MapViewModel() }
         register { Navigator() }
             .implements(NavigatorInterface.self)
     }

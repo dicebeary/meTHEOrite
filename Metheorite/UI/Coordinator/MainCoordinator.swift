@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class MainCoordinator {
+final class MainCoordinator: Coordinator {
+    var childCoordinators = [Coordinator]()
+    
     private var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -15,10 +17,11 @@ final class MainCoordinator {
     }
     
     func start() {
-        let containerVC = UIViewController()
+        let containerVC = MainViewController()
         navigationController.setViewControllers([containerVC], animated: true)
         
-        let listCoordinator = ContentCoordinator(tabBarController: tabBarController)
-        listCoordinator.start()
+        let contentCoordinator = ContentCoordinator(containerViewController: containerVC)
+        contentCoordinator.start()
+        childCoordinators.append(contentCoordinator)
     }
 }
