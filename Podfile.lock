@@ -18,6 +18,9 @@ PODS:
     - Differentiator (~> 4.0)
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxMKMapView (5.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - RxBlocking (~> 5.0)
   - RxCocoa (~> 5.0)
   - RxDataSources (~> 4.0)
+  - RxMKMapView
   - RxOptional (= 4.1.0)
   - RxSwift (~> 5.0)
   - RxTest (~> 5.0)
@@ -59,6 +63,7 @@ SPEC REPOS:
     - RxBlocking
     - RxCocoa
     - RxDataSources
+    - RxMKMapView
     - RxOptional
     - RxRelay
     - RxSwift
@@ -78,6 +83,7 @@ SPEC CHECKSUMS:
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxMKMapView: 7b19fc545887314851ea67b12193bc8c6004dcb5
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
@@ -87,6 +93,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
   SwiftyMocky: 1fb3ceca9ded134dad4da58a0f20023d7f685ccf
 
-PODFILE CHECKSUM: f7b3826c1a6e2efe54b3275bc4c834fdda36672b
+PODFILE CHECKSUM: 592e30fb9692d8d3379f4e2255c8605fa5c17d5c
 
 COCOAPODS: 1.10.2

@@ -13,7 +13,7 @@ struct MeteoriteLandingMapper {
             MeteoriteLanding(name: apiModel.name,
                              id: apiModel.id,
                              meteoriteClass: apiModel.recclass,
-                             mass: Int(apiModel.mass),
+                             mass: Double(apiModel.mass ?? ""),
                              fall: mapFall(apiModel.fall),
                              year: apiModel.year,
                              location: mapLocation(apiModel.geolocation))
@@ -31,7 +31,8 @@ struct MeteoriteLandingMapper {
         }
     }
     
-    private static func mapLocation(_ apiModel: GeoLocationApiModel) -> GeoLocation {
+    private static func mapLocation(_ apiModel: GeoLocationApiModel?) -> GeoLocation? {
+        guard let apiModel = apiModel else { return nil }
         return GeoLocation(longitude: apiModel.coordinates[0], latitude: apiModel.coordinates[1])
     }
 }

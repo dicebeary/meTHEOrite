@@ -26,24 +26,9 @@ final class ListViewController: UIViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.navigate(from: self)
         setupTableView()
         setupNavigationBar()
         setupBindings()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        self.tabBarController?.title = Localization.newsListTitle
-//        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
-//        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = false
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        self.tabBarController?.title = ""
-//        self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = false
-//        self.tabBarController?.navigationItem.hidesSearchBarWhenScrolling = true
     }
 }
 
@@ -61,23 +46,21 @@ extension ListViewController: ViewDataBinder {
     }
 }
 
-// MARK: - Providing events
-extension ListViewController: ViewEventListener {
-    struct Events {
-        let itemSelected: ControlEvent<IndexPath>
-        let searchTextChanged: ControlEvent<String?>
-    }
-
-    var events: Events {
-        return Events(itemSelected: tableView.rx.itemSelected,
-                      searchTextChanged: ControlEvent(events: searchTextRelay.asObservable()))
-    }
-}
+//// MARK: - Providing events
+//extension ListViewController: ViewEventListener {
+//    struct Events {
+//    }
+//
+//    var events: Events {
+//        return Events(itemSelected: tableView.rx.itemSelected,
+//                      searchTextChanged: ControlEvent(events: searchTextRelay.asObservable()))
+//    }
+//}
 
 // MARK: - Setup
 private extension ListViewController {
     func setupBindings() {
-        let input = ListViewModel.Input(screenEvents: self.events)
+        let input = ListViewModel.Input()
         let output = viewModel.map(from: input)
         bind(data: output.screenData)
     }

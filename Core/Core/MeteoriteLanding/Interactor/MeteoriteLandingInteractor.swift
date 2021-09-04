@@ -23,10 +23,11 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
     
     func getLandings() -> Completable {
         return meteoriteLandingService.getMeteoriteLandings()
+            .debug()
             .map(MeteoriteLandingMapper.map)
-            .do(onSuccess: { [weak landingsSubject] landings in
+            .flatMapCompletable { [weak landingsSubject] landings in
                 landingsSubject?.accept(landings)
-            })
-            .asCompletable()
+                return .complete()
+            }
     }
 }

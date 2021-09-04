@@ -19,7 +19,7 @@ final class ListViewModel {
 // MARK: - Transform data flow
 extension ListViewModel: ViewModelMappable {
     struct Input {
-        let screenEvents: ListViewController.Events
+//        let screenEvents: ListViewController.Events
     }
 
     struct Output {
@@ -35,13 +35,6 @@ extension ListViewModel: ViewModelMappable {
 
         return Output(screenData: screenData)
     }
-
-//    func navigate(from viewController: UIViewController) {
-//        newsInteractor.getSelectedArticle()
-//            .subscribe { [weak self] _ in
-//                self?.navigator.push(from: viewController, to: UIConstants.StoryboardIdentifier.details)
-//            }.disposed(by: bag)
-//    }
 }
 
 // MARK: - Event handling
@@ -56,7 +49,12 @@ private extension ListViewModel {
 // MARK: - Output helper methods
 private extension ListViewModel {
     func getItems() -> Driver<[MeteoriteCell.Data]> {
-        .just([])
-//        interactor.landings
+        interactor.landings
+            .map { landings in
+                landings.map { landing in
+                    return MeteoriteCell.Data(title: landing.name)
+                }
+            }
+            .asDriver(onErrorJustReturn: [])
     }
 }
