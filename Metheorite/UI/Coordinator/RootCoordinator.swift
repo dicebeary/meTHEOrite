@@ -1,8 +1,8 @@
 //
 //  RootCoordinator.swift
-//  Placeboop
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 08. 29..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import UIKit

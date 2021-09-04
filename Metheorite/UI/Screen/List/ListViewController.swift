@@ -1,8 +1,8 @@
 //
 //  ListViewController.swift
-//  Fortnightly
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 07. 16..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import UIKit
@@ -50,12 +50,12 @@ final class ListViewController: UIViewController, UISearchBarDelegate {
 // MARK: - Binding data
 extension ListViewController: ViewDataBinder {
     struct Data {
-        let items: Driver<[NewsCell.Data]>
+        let items: Driver<[MeteoriteCell.Data]>
     }
 
     func bind(data: Data) {
         data.items
-            .drive(tableView.rx.items(cellIdentifier: NewsCell.reuseIdentifier, cellType: NewsCell.self)) { index, element, cell in
+            .drive(tableView.rx.items(cellIdentifier: MeteoriteCell.reuseIdentifier, cellType: MeteoriteCell.self)) { index, element, cell in
                 cell.bind(data: element)
             }.disposed(by: bag)
     }
@@ -86,7 +86,7 @@ private extension ListViewController {
         tableView.dataSource = nil
         tableView.delegate = nil
         tableView.tableFooterView = UIView()
-        tableView.register(NewsCell.self)
+        tableView.register(MeteoriteCell.self)
 
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in

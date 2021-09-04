@@ -12,5 +12,21 @@ import Resolver
 
 public extension Resolver {
     static func assembleCore() {
+        register { MeteoriteLandingInteractor() }
+            .implements(MeteoriteLandingInteractorInterface.self)
+        register { MeteoriteLandingService() }
+            .implements(MeteoriteLandingServiceInterface.self)
+        register { _ -> MoyaProvider<MeteoriteLandingAPI> in
+            switch AppInfo.environment {
+            case .mock:
+                let stubClosure: MoyaProvider<MeteoriteLandingAPI>.StubClosure = { _ in return StubBehavior.delayed(seconds: 1.0) }
+                return MoyaProvider<MeteoriteLandingAPI>(stubClosure: stubClosure,
+                                             plugins: [NetworkLoggerPlugin()])
+            case .prod:
+                return MoyaProvider<MeteoriteLandingAPI>(plugins: [NetworkLoggerPlugin()])
+            }
+        }
+        .scope(.application)
+
     }
 }

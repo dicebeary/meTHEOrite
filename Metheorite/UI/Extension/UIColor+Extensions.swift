@@ -1,6 +1,6 @@
 //
 //  UIColor+Extensions.swift
-//  meTHEOrite
+//  Metheorite
 //
 //  Created by Vajda Kristóf on 2021. 09. 04..
 //

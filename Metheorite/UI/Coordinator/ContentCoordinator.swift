@@ -1,8 +1,8 @@
 //
 //  ContentCoordinator.swift
-//  Placeboop
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 08. 30..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import UIKit

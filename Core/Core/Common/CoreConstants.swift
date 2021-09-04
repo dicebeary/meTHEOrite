@@ -8,5 +8,5 @@
 import Foundation
 
 enum CoreConstants {
-    static let apiKey = "f71af7261c434b5d8be60816ed910d8b"
+    static let appToken = "NjVHrz99aHgaXl707t2fard03"
 }

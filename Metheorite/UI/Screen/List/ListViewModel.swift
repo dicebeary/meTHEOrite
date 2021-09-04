@@ -1,8 +1,8 @@
 //
 //  ListViewModel.swift
-//  Fortnightly
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 07. 16..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import Domain
@@ -11,14 +11,13 @@ import RxCocoa
 import Resolver
 
 final class ListViewModel {
-    @Injected private var newsInteractor: NewsInteractorInterface
-    @Injected private var navigator: NavigatorInterface
+    @Injected private var interactor: MeteoriteLandingInteractorInterface
     
     private let bag = DisposeBag()
 }
 
 // MARK: - Transform data flow
-extension ListViewModel: ViewModelManipulator {
+extension ListViewModel: ViewModelMappable {
     struct Input {
         let screenEvents: ListViewController.Events
     }
@@ -30,8 +29,6 @@ extension ListViewModel: ViewModelManipulator {
     func map(from input: Input) -> Output {
         // Listening events
         fetchInitialData()
-        searchNews(from: input.screenEvents.searchTextChanged)
-        selectItem(from: input.screenEvents.itemSelected)
 
         // Gathering data
         let screenData = ListViewController.Data(items: getItems())
@@ -50,44 +47,16 @@ extension ListViewModel: ViewModelManipulator {
 // MARK: - Event handling
 private extension ListViewModel {
     func fetchInitialData() {
-        newsInteractor.fetchNews(text: nil)
+        interactor.getLandings()
             .subscribe()
             .disposed(by: bag)
-
-        newsInteractor.fetchSources()
-            .subscribe()
-            .disposed(by: bag)
-    }
-
-    func searchNews(from searchTextEvents: ControlEvent<String?>) {
-        searchTextEvents
-            .skip(1)
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-            .bind { [newsInteractor, bag] text in
-                newsInteractor.fetchNews(text: text)
-                    .subscribe()
-                    .disposed(by: bag)
-            }.disposed(by: bag)
-    }
-
-    func selectItem(from tableViewEvents: ControlEvent<IndexPath>) {
-        tableViewEvents
-            .asObservable()
-            .withLatestFrom(newsInteractor.getNews()) { ($0, $1) }
-            .subscribe(onNext: { [newsInteractor, bag] indexPath, articles in
-                let article = articles[indexPath.row]
-                newsInteractor.selectArticle(article)
-                    .subscribe()
-                    .disposed(by: bag)
-            }).disposed(by: bag)
     }
 }
 
 // MARK: - Output helper methods
 private extension ListViewModel {
-    func getItems() -> Driver<[NewsCell.Data]> {
-        newsInteractor.getNews()
-            .map { $0.enumerated().map { ListViewMapper.map(from: $0.element, index: $0.offset) } }
-            .asDriver(onErrorJustReturn: [])
+    func getItems() -> Driver<[MeteoriteCell.Data]> {
+        .just([])
+//        interactor.landings
     }
 }

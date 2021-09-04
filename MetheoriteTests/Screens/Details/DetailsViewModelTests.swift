@@ -1,8 +1,8 @@
 //
 //  DetailsViewModelTests.swift
-//  FortnightlyTests
+//  MetheoriteTests
 //
-//  Created by Vajda Kristóf on 2021. 07. 18..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import XCTest
@@ -13,10 +13,10 @@ import RxCocoa
 import SwiftyMocky
 @testable import Core
 @testable import Domain
-@testable import Fortnightly
+@testable import Metheorite
 
-class DetailsViewModelTests: XCTestCase {
-    var interactor: NewsInteractorInterfaceMock!
+class MapViewModelTests: XCTestCase {
+    var interactor: MetheoriteLandingInteractorInterfaceMock!
     var sut: DetailsViewModel!
 
     let completable = Completable.create { completable -> Disposable in
