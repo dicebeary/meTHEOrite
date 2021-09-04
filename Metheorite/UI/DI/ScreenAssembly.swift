@@ -1,8 +1,8 @@
 //
 //  ScreenAssembly.swift
-//  Fortnightly
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 07. 17..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import Domain
@@ -11,8 +11,6 @@ import Resolver
 public extension Resolver {
     static func assembleScreen() {
         register { ListViewModel() }
-        register { DetailsViewModel() }
-        register { Navigator() }
-            .implements(NavigatorInterface.self)
+        register { MapViewModel() }
     }
 }

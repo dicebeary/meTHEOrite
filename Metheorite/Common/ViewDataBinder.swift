@@ -1,8 +1,8 @@
 //
 //  ViewDataBinder.swift
-//  Fortnightly
+//  Metheorite
 //
-//  Created by Vajda Kristóf on 2021. 07. 16..
+//  Created by Vajda Kristóf on 2021. 09. 04..
 //
 
 import Foundation
