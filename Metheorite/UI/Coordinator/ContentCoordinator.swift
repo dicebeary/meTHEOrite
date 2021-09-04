@@ -22,17 +22,32 @@ final class ContentCoordinator: Coordinator {
     }
     
     func start() {
-        let segmentedControl = UISegmentedControl(items: ["List", "Map"])
-        segmentedControl.frame.size = CGSize(width: 240, height: 30)
-        segmentedControl.selectedSegmentIndex = 0
-        containerViewController.navigationItem.titleView = segmentedControl
-        segmentedControl.addTarget(self, action: #selector(segmentDidChange(_:)), for: .valueChanged)
+        setupSegmentedControl()
+        setupNavigationBarButtons()
         
         listScreen = ListViewController()
         mapScreen = MapViewController()
         add(child: listScreen, to: containerViewController)
         add(child: mapScreen, to: containerViewController)
+        containerViewController.title = Localization.listTitle
         mapScreen.view.isHidden = true
+    }
+    
+    private func setupSegmentedControl() {
+        let segmentedControl = UISegmentedControl(items: [Localization.listTitle, Localization.mapTitle])
+        segmentedControl.frame.size = CGSize(width: 240, height: 30)
+        segmentedControl.selectedSegmentIndex = 0
+        containerViewController.navigationItem.titleView = segmentedControl
+
+        segmentedControl.addTarget(self, action: #selector(segmentDidChange(_:)), for: .valueChanged)
+    }
+    
+    private func setupNavigationBarButtons() {
+        let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: nil)
+        let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: nil)
+        containerViewController.navigationItem.leftBarButtonItem = sortButton
+        containerViewController.navigationItem.rightBarButtonItem = refreshButton
+
     }
 
     private func add(child viewController: UIViewController, to parent: UIViewController) {
@@ -63,9 +78,11 @@ final class ContentCoordinator: Coordinator {
     
     @objc private func segmentDidChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            containerViewController.title = Localization.listTitle
             listScreen.view.isHidden = false
             mapScreen.view.isHidden = true
         } else {
+            containerViewController.title = Localization.mapTitle
             listScreen.view.isHidden = true
             mapScreen.view.isHidden = false
         }

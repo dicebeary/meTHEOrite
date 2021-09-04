@@ -40,7 +40,7 @@ extension MeteoriteLandingAPI {
     var task: Task {
         switch self {
         case .getLandings:
-            return .requestPlain
+            return .requestParameters(parameters: ["$where": "year>'1900-01-01T00:00:00.000'"], encoding: URLEncoding.default)
         }
     }
     

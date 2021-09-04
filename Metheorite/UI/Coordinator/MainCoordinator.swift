@@ -23,18 +23,25 @@ final class MainCoordinator: Coordinator {
     
     func start() {
         let containerVC = MainViewController()
-        navigationController.setViewControllers([containerVC], animated: true)
-        
         let contentCoordinator = ContentCoordinator(containerViewController: containerVC)
+        
+        navigationController.setViewControllers([containerVC], animated: true)
         contentCoordinator.start()
+        
         childCoordinators.append(contentCoordinator)
         
         setupInitialData()
+        setupNavigationController()
     }
     
     private func setupInitialData() {
         meteoriteLandingInteractor.getLandings()
             .subscribe()
             .disposed(by: bag)
+    }
+    
+    private func setupNavigationController() {
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationItem.largeTitleDisplayMode = .automatic
     }
 }

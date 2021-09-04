@@ -17,6 +17,7 @@ final class MeteoriteLandingService: MeteoriteLandingServiceInterface {
         return provider.rx.request(.getLandings)
             .filterSuccessfulStatusCodes()
 //            .parseError()
+            .debug()
             .map([MeteoriteLandingApiModel].self)
     }
 }

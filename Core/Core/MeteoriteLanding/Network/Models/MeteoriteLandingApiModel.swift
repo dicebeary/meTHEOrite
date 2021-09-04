@@ -12,10 +12,10 @@ struct MeteoriteLandingApiModel: Codable {
     let id: String
     let nametype: String
     let recclass: String
-    let mass: String
+    let mass: String?
     let fall: String
     let year: String
-    let reclat: String
-    let reclong: String
-    let geolocation: GeoLocationApiModel
+    let reclat: String?
+    let reclong: String?
+    let geolocation: GeoLocationApiModel?
 }

@@ -14,6 +14,7 @@ public extension Resolver {
     static func assembleCore() {
         register { MeteoriteLandingInteractor() }
             .implements(MeteoriteLandingInteractorInterface.self)
+            .scope(.application)
         register { MeteoriteLandingService() }
             .implements(MeteoriteLandingServiceInterface.self)
         register { _ -> MoyaProvider<MeteoriteLandingAPI> in
