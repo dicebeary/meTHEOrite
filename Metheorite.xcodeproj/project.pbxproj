@@ -1,0 +1,1124 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20DF5A16839FEB1BC48F80AD /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */; };
+		59894FF6D08E8CAD63033D13 /* Pods_Metheorite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA011E642E4161184968A30B /* Pods_Metheorite.framework */; };
+		6A186B3A26DFE1B000AFD5D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */; };
+		6A186B3B26DFE1B000AFD5D3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */; };
+		6A186B3F26E28EC500AFD5D3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */; };
+		6A1F9BFD26A22F1F00BB3ADA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9BFC26A22F1F00BB3ADA /* ListViewModel.swift */; };
+		6A1F9C0126A22F3B00BB3ADA /* ViewModelMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C0026A22F3B00BB3ADA /* ViewModelMappable.swift */; };
+		6A1F9C2F26A2D8DC00BB3ADA /* ScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C2E26A2D8DC00BB3ADA /* ScreenAssembly.swift */; };
+		6A1F9C3626A2DCB800BB3ADA /* MeteoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3426A2DCB800BB3ADA /* MeteoriteCell.swift */; };
+		6A1F9C3726A2DCB800BB3ADA /* MeteoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */; };
+		6A1F9C4026A2DF2500BB3ADA /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */; };
+		6A1F9C4626A2DF5500BB3ADA /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */; };
+		6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */; };
+		6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B865B26CEA39A00310374 /* Resolver.swift */; };
+		6A2FABCD26A1C5B6009BA29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */; };
+		6A2FABD626A1C5B6009BA29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FABD526A1C5B6009BA29C /* Assets.xcassets */; };
+		6A2FABD926A1C5B6009BA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FABD726A1C5B6009BA29C /* LaunchScreen.storyboard */; };
+		6A3F7F4E26A47CA500E1FC7C /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */; };
+		6A3F7F5626A47D2900E1FC7C /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */; };
+		6A3F7F5E26A4813300E1FC7C /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */; };
+		6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */; };
+		6A72EC9326A1F38300CFAE64 /* ViewEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */; };
+		6AC2A2EF26A214EE002D1A53 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2A2EE26A214EE002D1A53 /* Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6AC979F726A2180600490AF9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC979F626A2180600490AF9 /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6AFDF9BB26A36D7F002D167E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDF9BD26A36D7F002D167E /* Localizable.strings */; };
+		6AFDFA4C26A3715D002D167E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA4926A3715D002D167E /* Fonts.swift */; };
+		6AFDFA4D26A3715D002D167E /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA4A26A3715D002D167E /* Localization.swift */; };
+		6AFDFA4E26A3715D002D167E /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA4B26A3715D002D167E /* XCAssets+Generated.swift */; };
+		6AFDFA5226A37305002D167E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA5126A37305002D167E /* UIColor+Extensions.swift */; };
+		6AFDFA6026A389F1002D167E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA5F26A389F1002D167E /* MapViewModel.swift */; };
+		6AFF340226DBCC3200299057 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340126DBCC3200299057 /* RootCoordinator.swift */; };
+		6AFF340426DBCCFE00299057 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340326DBCCFE00299057 /* MainCoordinator.swift */; };
+		6AFF340726DBCFCA00299057 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340526DBCFCA00299057 /* ListViewController.swift */; };
+		6AFF340826DBCFCA00299057 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF340626DBCFCA00299057 /* ListViewController.xib */; };
+		6AFF340B26DBD05200299057 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340926DBD05200299057 /* MapViewController.swift */; };
+		6AFF340C26DBD05200299057 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF340A26DBD05200299057 /* MapViewController.xib */; };
+		6AFF340E26DD5F3800299057 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340D26DD5F3800299057 /* ContentCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A2FABE026A1C5B7009BA29C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A2FABC126A1C5B6009BA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A2FABC826A1C5B6009BA29C;
+			remoteInfo = Fortnightly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug.xcconfig"; sourceTree = "<group>"; };
+		13C0B3E6D133D872543CAF70 /* Pods-Placeboop-PlaceboopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.release.xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.release.xcconfig"; sourceTree = "<group>"; };
+		1D2EBE5E43C1E735995777CD /* Pods-Placeboop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.release.xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.release.xcconfig"; sourceTree = "<group>"; };
+		1FF3C5444135AC3EF392B14E /* Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig"; sourceTree = "<group>"; };
+		2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release.xcconfig"; sourceTree = "<group>"; };
+		2DE0A4406B9E71F006D444E8 /* Pods-Fortnightly-FortnightlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.debug.xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release (mock).xcconfig"; sourceTree = "<group>"; };
+		5453DAD615A349A989BC853D /* Pods-Placeboop-PlaceboopTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.release (mock).xcconfig"; sourceTree = "<group>"; };
+		635B30D4CDCB0A649A386CB6 /* Pods-Fortnightly.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.debug (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6A1F9BFC26A22F1F00BB3ADA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		6A1F9C0026A22F3B00BB3ADA /* ViewModelMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMappable.swift; sourceTree = "<group>"; };
+		6A1F9C2E26A2D8DC00BB3ADA /* ScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAssembly.swift; sourceTree = "<group>"; };
+		6A1F9C3426A2DCB800BB3ADA /* MeteoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteCell.swift; sourceTree = "<group>"; };
+		6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeteoriteCell.xib; sourceTree = "<group>"; };
+		6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewError.swift; sourceTree = "<group>"; };
+		6A2B865B26CEA39A00310374 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		6A2FABC926A1C5B6009BA29C /* Theo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A2FABD526A1C5B6009BA29C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A2FABD826A1C5B6009BA29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A2FABDA26A1C5B6009BA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetheoriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2FABE526A1C5B7009BA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
+		6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataBinder.swift; sourceTree = "<group>"; };
+		6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventListener.swift; sourceTree = "<group>"; };
+		6AC2A2EE26A214EE002D1A53 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC979F626A2180600490AF9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AFDF9BC26A36D7F002D167E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AFDFA4926A3715D002D167E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		6AFDFA4A26A3715D002D167E /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		6AFDFA4B26A3715D002D167E /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		6AFDFA5126A37305002D167E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		6AFDFA5F26A389F1002D167E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		6AFF340126DBCC3200299057 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		6AFF340326DBCCFE00299057 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6AFF340526DBCFCA00299057 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6AFF340626DBCFCA00299057 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		6AFF340926DBD05200299057 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6AFF340A26DBD05200299057 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		6AFF340D26DD5F3800299057 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
+		6EA9FD80D18E46AC153DB066 /* Pods-Fortnightly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.debug.xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.debug.xcconfig"; sourceTree = "<group>"; };
+		6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite_MetheoriteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FDBB681AF0868080C1B5C32 /* Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; sourceTree = "<group>"; };
+		A32D5A80ADA10482402D0553 /* Pods-Placeboop-PlaceboopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.debug.xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA011E642E4161184968A30B /* Pods_Metheorite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53D59F8B7163BA5B46A30ED /* Pods-Fortnightly-FortnightlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.release.xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.release.xcconfig"; sourceTree = "<group>"; };
+		B77360C80229E5C4BE5AC53D /* Pods-Placeboop.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.debug (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		B8E58C389370AA98E8A3ECBB /* Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3666602D4CC38D5E873B254 /* Pods-Fortnightly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.release.xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.release.xcconfig"; sourceTree = "<group>"; };
+		CDDC8B4964772EAE09680507 /* Pods-Fortnightly.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.release (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.release (mock).xcconfig"; sourceTree = "<group>"; };
+		D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3D4A10689BBB58C4E8033AA /* Pods-Placeboop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.debug.xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.debug.xcconfig"; sourceTree = "<group>"; };
+		FE822CC01BE55F439B301D34 /* Pods-Placeboop.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.release (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.release (mock).xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A2FABC626A1C5B6009BA29C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AC979F726A2180600490AF9 /* Core.framework in Frameworks */,
+				6AC2A2EF26A214EE002D1A53 /* Domain.framework in Frameworks */,
+				59894FF6D08E8CAD63033D13 /* Pods_Metheorite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2FABDC26A1C5B7009BA29C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20DF5A16839FEB1BC48F80AD /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		688F40ECE706E1903649DDAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AC979F626A2180600490AF9 /* Core.framework */,
+				6AC2A2EE26A214EE002D1A53 /* Domain.framework */,
+				AA011E642E4161184968A30B /* Pods_Metheorite.framework */,
+				6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A186B3626DFE07100AFD5D3 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6A186B3726DFE19F00AFD5D3 /* Main */,
+				6A72EC8626A1F2B700CFAE64 /* Map */,
+				6A72EC8526A1F2B300CFAE64 /* List */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		6A186B3726DFE19F00AFD5D3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */,
+				6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6A186B3D26E28EB200AFD5D3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6AFF340126DBCC3200299057 /* RootCoordinator.swift */,
+				6AFF340326DBCCFE00299057 /* MainCoordinator.swift */,
+				6AFF340D26DD5F3800299057 /* ContentCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6A1F9C2926A2D84000BB3ADA /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6A1F9C2E26A2D8DC00BB3ADA /* ScreenAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		6A1F9C3226A2DC9D00BB3ADA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A1F9C3326A2DCA300BB3ADA /* MeteoriteCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A1F9C3326A2DCA300BB3ADA /* MeteoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A1F9C3426A2DCB800BB3ADA /* MeteoriteCell.swift */,
+				6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */,
+			);
+			path = MeteoriteCell;
+			sourceTree = "<group>";
+		};
+		6A2FABC026A1C5B6009BA29C = {
+			isa = PBXGroup;
+			children = (
+				6A2FABCB26A1C5B6009BA29C /* Metheorite */,
+				6A2FABE226A1C5B7009BA29C /* MetheoriteTests */,
+				6A2FABCA26A1C5B6009BA29C /* Products */,
+				9FCC74098B03BBFD4AA51439 /* Pods */,
+				688F40ECE706E1903649DDAC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6A2FABCA26A1C5B6009BA29C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A2FABC926A1C5B6009BA29C /* Theo.app */,
+				6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A2FABCB26A1C5B6009BA29C /* Metheorite */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDF9C026A36E5E002D167E /* Resources */,
+				6A72EC8726A1F2D500CFAE64 /* Common */,
+				6A72EC8026A1F27C00CFAE64 /* UI */,
+				6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */,
+				6A2FABD726A1C5B6009BA29C /* LaunchScreen.storyboard */,
+				6A2FABDA26A1C5B6009BA29C /* Info.plist */,
+			);
+			path = Metheorite;
+			sourceTree = "<group>";
+		};
+		6A2FABE226A1C5B7009BA29C /* MetheoriteTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */,
+				6A3F7F4A26A47C8D00E1FC7C /* Screens */,
+				6A2FABE526A1C5B7009BA29C /* Info.plist */,
+			);
+			path = MetheoriteTests;
+			sourceTree = "<group>";
+		};
+		6A3F7F4A26A47C8D00E1FC7C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6A3F7F4C26A47C9600E1FC7C /* Details */,
+				6A3F7F4B26A47C9200E1FC7C /* List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6A3F7F4B26A47C9200E1FC7C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6A3F7F4C26A47C9600E1FC7C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		6A4F57F226E3598C008D5D53 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */,
+				6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */,
+				6AFDFA5126A37305002D167E /* UIColor+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6A72EC8026A1F27C00CFAE64 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A186B3D26E28EB200AFD5D3 /* Coordinator */,
+				6A1F9C2926A2D84000BB3ADA /* DI */,
+				6A4F57F226E3598C008D5D53 /* Extension */,
+				6A186B3626DFE07100AFD5D3 /* Screen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6A72EC8526A1F2B300CFAE64 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6A1F9C3226A2DC9D00BB3ADA /* View */,
+				6AFF340526DBCFCA00299057 /* ListViewController.swift */,
+				6AFF340626DBCFCA00299057 /* ListViewController.xib */,
+				6A1F9BFC26A22F1F00BB3ADA /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		6A72EC8626A1F2B700CFAE64 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDFA5F26A389F1002D167E /* MapViewModel.swift */,
+				6AFF340926DBD05200299057 /* MapViewController.swift */,
+				6AFF340A26DBD05200299057 /* MapViewController.xib */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6A72EC8726A1F2D500CFAE64 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDFA4226A37120002D167E /* Generated */,
+				6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */,
+				6A2B865B26CEA39A00310374 /* Resolver.swift */,
+				6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */,
+				6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */,
+				6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */,
+				6A1F9C0026A22F3B00BB3ADA /* ViewModelMappable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6AFDF9C026A36E5E002D167E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDF9C326A36E7C002D167E /* Assets */,
+				6AFDF9C226A36E75002D167E /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6AFDF9C226A36E75002D167E /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDF9BD26A36D7F002D167E /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		6AFDF9C326A36E7C002D167E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6A2FABD526A1C5B6009BA29C /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6AFDFA4226A37120002D167E /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				6AFDFA4926A3715D002D167E /* Fonts.swift */,
+				6AFDFA4A26A3715D002D167E /* Localization.swift */,
+				6AFDFA4B26A3715D002D167E /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		9FCC74098B03BBFD4AA51439 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EA9FD80D18E46AC153DB066 /* Pods-Fortnightly.debug.xcconfig */,
+				635B30D4CDCB0A649A386CB6 /* Pods-Fortnightly.debug (mock).xcconfig */,
+				C3666602D4CC38D5E873B254 /* Pods-Fortnightly.release.xcconfig */,
+				CDDC8B4964772EAE09680507 /* Pods-Fortnightly.release (mock).xcconfig */,
+				2DE0A4406B9E71F006D444E8 /* Pods-Fortnightly-FortnightlyTests.debug.xcconfig */,
+				6FDBB681AF0868080C1B5C32 /* Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig */,
+				B53D59F8B7163BA5B46A30ED /* Pods-Fortnightly-FortnightlyTests.release.xcconfig */,
+				1FF3C5444135AC3EF392B14E /* Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig */,
+				D3D4A10689BBB58C4E8033AA /* Pods-Placeboop.debug.xcconfig */,
+				B77360C80229E5C4BE5AC53D /* Pods-Placeboop.debug (mock).xcconfig */,
+				1D2EBE5E43C1E735995777CD /* Pods-Placeboop.release.xcconfig */,
+				FE822CC01BE55F439B301D34 /* Pods-Placeboop.release (mock).xcconfig */,
+				A32D5A80ADA10482402D0553 /* Pods-Placeboop-PlaceboopTests.debug.xcconfig */,
+				B8E58C389370AA98E8A3ECBB /* Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig */,
+				13C0B3E6D133D872543CAF70 /* Pods-Placeboop-PlaceboopTests.release.xcconfig */,
+				5453DAD615A349A989BC853D /* Pods-Placeboop-PlaceboopTests.release (mock).xcconfig */,
+				0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */,
+				880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */,
+				2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */,
+				2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */,
+				D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */,
+				064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */,
+				BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */,
+				9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A2FABC826A1C5B6009BA29C /* Metheorite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A2FABF326A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "Metheorite" */;
+			buildPhases = (
+				7F03340CEA2F04AA8CD4CFFB /* [CP] Check Pods Manifest.lock */,
+				6A2FABC526A1C5B6009BA29C /* Sources */,
+				6A2FABC626A1C5B6009BA29C /* Frameworks */,
+				6A2FABC726A1C5B6009BA29C /* Resources */,
+				6AFDF9AE26A36CEA002D167E /* Swiftgen */,
+				46D6D667430AF8778773E358 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Metheorite;
+			productName = Fortnightly;
+			productReference = 6A2FABC926A1C5B6009BA29C /* Theo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A2FABDE26A1C5B7009BA29C /* MetheoriteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A2FABF626A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "MetheoriteTests" */;
+			buildPhases = (
+				0EDBF59B5D4B64D4537D989A /* [CP] Check Pods Manifest.lock */,
+				6A2FABDB26A1C5B7009BA29C /* Sources */,
+				6A2FABDC26A1C5B7009BA29C /* Frameworks */,
+				6A2FABDD26A1C5B7009BA29C /* Resources */,
+				9570D783547067EA706505B2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A2FABE126A1C5B7009BA29C /* PBXTargetDependency */,
+			);
+			name = MetheoriteTests;
+			productName = FortnightlyTests;
+			productReference = 6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A2FABC126A1C5B6009BA29C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					6A2FABC826A1C5B6009BA29C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					6A2FABDE26A1C5B7009BA29C = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+						TestTargetID = 6A2FABC826A1C5B6009BA29C;
+					};
+				};
+			};
+			buildConfigurationList = 6A2FABC426A1C5B6009BA29C /* Build configuration list for PBXProject "Metheorite" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6A2FABC026A1C5B6009BA29C;
+			productRefGroup = 6A2FABCA26A1C5B6009BA29C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A2FABC826A1C5B6009BA29C /* Metheorite */,
+				6A2FABDE26A1C5B7009BA29C /* MetheoriteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A2FABC726A1C5B6009BA29C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AFF340826DBCFCA00299057 /* ListViewController.xib in Resources */,
+				6AFF340C26DBD05200299057 /* MapViewController.xib in Resources */,
+				6AFDF9BB26A36D7F002D167E /* Localizable.strings in Resources */,
+				6A2FABD926A1C5B6009BA29C /* LaunchScreen.storyboard in Resources */,
+				6A2FABD626A1C5B6009BA29C /* Assets.xcassets in Resources */,
+				6A186B3B26DFE1B000AFD5D3 /* MainViewController.xib in Resources */,
+				6A1F9C3726A2DCB800BB3ADA /* MeteoriteCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2FABDD26A1C5B7009BA29C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EDBF59B5D4B64D4537D989A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Metheorite-MetheoriteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46D6D667430AF8778773E358 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite/Pods-Metheorite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite/Pods-Metheorite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Metheorite/Pods-Metheorite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AFDF9AE26A36CEA002D167E /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run \nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		7F03340CEA2F04AA8CD4CFFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Metheorite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9570D783547067EA706505B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A2FABC526A1C5B6009BA29C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AFDFA4E26A3715D002D167E /* XCAssets+Generated.swift in Sources */,
+				6A186B3A26DFE1B000AFD5D3 /* MainViewController.swift in Sources */,
+				6AFDFA6026A389F1002D167E /* MapViewModel.swift in Sources */,
+				6A1F9C4026A2DF2500BB3ADA /* UITableView+Extensions.swift in Sources */,
+				6AFF340226DBCC3200299057 /* RootCoordinator.swift in Sources */,
+				6A1F9BFD26A22F1F00BB3ADA /* ListViewModel.swift in Sources */,
+				6AFDFA4D26A3715D002D167E /* Localization.swift in Sources */,
+				6AFDFA4C26A3715D002D167E /* Fonts.swift in Sources */,
+				6A186B3F26E28EC500AFD5D3 /* Coordinator.swift in Sources */,
+				6A1F9C2F26A2D8DC00BB3ADA /* ScreenAssembly.swift in Sources */,
+				6AFF340726DBCFCA00299057 /* ListViewController.swift in Sources */,
+				6AFF340B26DBD05200299057 /* MapViewController.swift in Sources */,
+				6AFF340426DBCCFE00299057 /* MainCoordinator.swift in Sources */,
+				6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */,
+				6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */,
+				6A1F9C0126A22F3B00BB3ADA /* ViewModelMappable.swift in Sources */,
+				6AFF340E26DD5F3800299057 /* ContentCoordinator.swift in Sources */,
+				6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */,
+				6AFDFA5226A37305002D167E /* UIColor+Extensions.swift in Sources */,
+				6A72EC9326A1F38300CFAE64 /* ViewEventListener.swift in Sources */,
+				6A1F9C3626A2DCB800BB3ADA /* MeteoriteCell.swift in Sources */,
+				6A1F9C4626A2DF5500BB3ADA /* UITableViewCell+Extensions.swift in Sources */,
+				6A2FABCD26A1C5B6009BA29C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A2FABDB26A1C5B7009BA29C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A3F7F5E26A4813300E1FC7C /* DetailsViewModelTests.swift in Sources */,
+				6A3F7F5626A47D2900E1FC7C /* Mock.generated.swift in Sources */,
+				6A3F7F4E26A47CA500E1FC7C /* ListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A2FABE126A1C5B7009BA29C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A2FABC826A1C5B6009BA29C /* Metheorite */;
+			targetProxy = 6A2FABE026A1C5B7009BA29C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6A2FABD726A1C5B6009BA29C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A2FABD826A1C5B6009BA29C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6AFDF9BD26A36D7F002D167E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AFDF9BC26A36D7F002D167E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6A2FABF126A1C5B7009BA29C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6A2FABF226A1C5B7009BA29C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A2FABF426A1C5B7009BA29C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = Metheorite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PREFIX = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite;
+				PRODUCT_NAME = "Theo$(PREFIX)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6A2FABF526A1C5B7009BA29C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = Metheorite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PREFIX = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite;
+				PRODUCT_NAME = "Theo$(PREFIX)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6A2FABF726A1C5B7009BA29C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = FortnightlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
+			};
+			name = Debug;
+		};
+		6A2FABF826A1C5B7009BA29C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = FortnightlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
+			};
+			name = Release;
+		};
+		6A7D71B426A4567E004CB3ED /* Debug (Mock) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug (Mock)";
+		};
+		6A7D71B526A4567E004CB3ED /* Debug (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = Metheorite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PREFIX = "-Mock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite.mock;
+				PRODUCT_NAME = "Theo$(PREFIX)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug (Mock)";
+		};
+		6A7D71B626A4567E004CB3ED /* Debug (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = FortnightlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
+			};
+			name = "Debug (Mock)";
+		};
+		6A7D71B726A45688004CB3ED /* Release (Mock) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (Mock)";
+		};
+		6A7D71B826A45688004CB3ED /* Release (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = Metheorite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PREFIX = "-Mock";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite.mock;
+				PRODUCT_NAME = "Theo$(PREFIX)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Release (Mock)";
+		};
+		6A7D71B926A45688004CB3ED /* Release (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = FortnightlyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
+			};
+			name = "Release (Mock)";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A2FABC426A1C5B6009BA29C /* Build configuration list for PBXProject "Metheorite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A2FABF126A1C5B7009BA29C /* Debug */,
+				6A7D71B426A4567E004CB3ED /* Debug (Mock) */,
+				6A2FABF226A1C5B7009BA29C /* Release */,
+				6A7D71B726A45688004CB3ED /* Release (Mock) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A2FABF326A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "Metheorite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A2FABF426A1C5B7009BA29C /* Debug */,
+				6A7D71B526A4567E004CB3ED /* Debug (Mock) */,
+				6A2FABF526A1C5B7009BA29C /* Release */,
+				6A7D71B826A45688004CB3ED /* Release (Mock) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A2FABF626A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "MetheoriteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A2FABF726A1C5B7009BA29C /* Debug */,
+				6A7D71B626A4567E004CB3ED /* Debug (Mock) */,
+				6A2FABF826A1C5B7009BA29C /* Release */,
+				6A7D71B926A45688004CB3ED /* Release (Mock) */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A2FABC126A1C5B6009BA29C /* Project object */;
+}
