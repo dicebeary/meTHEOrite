@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+ Metheorite
+
+  Created by Vajda Kristóf on 2021. 09. 02..
+  
+*/
+
+// List
+"list_title" = "List";
+
+// Map
+"map_title" = "Map";
+
+// Filter
+"sort_name" = "Name";
+"sort_date" = "Date";
+"sort_location" = "Location";
+"sort_mass" = "Mass";
+"sort_class" = "Class";
