@@ -13,8 +13,10 @@ import Resolver
 
 final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
     
-    private var landingsSubject = BehaviorRelay<[MeteoriteLanding]?>(value: nil)
     @Injected private var meteoriteLandingService: MeteoriteLandingServiceInterface
+    @Injected private var cache: VerySimpleCache
+
+    private var landingsSubject = BehaviorRelay<[MeteoriteLanding]?>(value: nil)
 
     var landings: Observable<[MeteoriteLanding]> {
         return landingsSubject
@@ -23,7 +25,8 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
     
     func getLandings() -> Completable {
         return meteoriteLandingService.getMeteoriteLandings()
-            .debug()
+            .cacheResponse(to: cache, as: CoreConstants.cacheKey)
+            .restoreResponseIfError(from: cache, as: CoreConstants.cacheKey)
             .map(MeteoriteLandingMapper.map)
             .flatMapCompletable { [weak landingsSubject] landings in
                 landingsSubject?.accept(landings)

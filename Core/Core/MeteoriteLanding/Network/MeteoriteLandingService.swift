@@ -16,8 +16,6 @@ final class MeteoriteLandingService: MeteoriteLandingServiceInterface {
     func getMeteoriteLandings() -> Single<[MeteoriteLandingApiModel]> {
         return provider.rx.request(.getLandings)
             .filterSuccessfulStatusCodes()
-//            .parseError()
-            .debug()
             .map([MeteoriteLandingApiModel].self)
     }
 }
