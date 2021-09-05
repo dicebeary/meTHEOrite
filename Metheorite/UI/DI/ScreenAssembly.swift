@@ -11,6 +11,7 @@ import Resolver
 public extension Resolver {
     static func assembleScreen() {
         register { MainViewModel() }
+        register { SortPopoverViewModel() }
         register { ListViewModel() }
         register { MapViewModel() }
     }

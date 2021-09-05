@@ -11,7 +11,7 @@ import Resolver
 
 protocol MainScreenDelegate: AnyObject {
     func segmentDidChange(index: Int)
-    func sortButtonTapped()
+    func sortButtonTapped(sender: UIBarButtonItem)
 }
 
 class MainViewController: UIViewController {
@@ -22,8 +22,8 @@ class MainViewController: UIViewController {
 
     let segmentedControl = UISegmentedControl(items: [Localization.listTitle, Localization.mapTitle])
 
-    let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(sortButtonTapped(_:)))
-    let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: nil)
+    var sortButton: UIBarButtonItem!
+    var refreshButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func sortButtonTapped(_ sender: UIBarButtonItem) {
-        screenDelegate?.sortButtonTapped()
+        screenDelegate?.sortButtonTapped(sender: sender)
     }
 
     @objc private func segmentDidChange(_ sender: UISegmentedControl) {
@@ -49,6 +49,9 @@ class MainViewController: UIViewController {
 // MARK: - Setup
 private extension MainViewController {
     func setup() {
+        sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(sortButtonTapped(_:)))
+        refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: nil)
+
         segmentedControl.addTarget(self, action: #selector(segmentDidChange(_:)), for: .valueChanged)
         
         segmentedControl.frame.size = CGSize(width: 240, height: 30)

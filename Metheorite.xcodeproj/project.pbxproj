@@ -32,6 +32,10 @@
 		6AC2A2EF26A214EE002D1A53 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2A2EE26A214EE002D1A53 /* Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6AC2BAFA26E3C7B7004466C4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BAF926E3C7B7004466C4 /* UIViewController+Extension.swift */; };
 		6AC2BAFC26E3CA5D004466C4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BAFB26E3CA5D004466C4 /* MainViewModel.swift */; };
+		6AC2BB0C26E4D699004466C4 /* SortPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB0A26E4D699004466C4 /* SortPopoverViewController.swift */; };
+		6AC2BB0E26E4F51C004466C4 /* SortPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2BB0B26E4D699004466C4 /* SortPopoverViewController.xib */; };
+		6AC2BB1226E4F8CE004466C4 /* MeteoriteAttribute+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */; };
+		6AC2BB1526E4F942004466C4 /* SortPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB1426E4F942004466C4 /* SortPopoverViewModel.swift */; };
 		6AC979F726A2180600490AF9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC979F626A2180600490AF9 /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6AFDF9BB26A36D7F002D167E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDF9BD26A36D7F002D167E /* Localizable.strings */; };
 		6AFDFA4C26A3715D002D167E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA4926A3715D002D167E /* Fonts.swift */; };
@@ -96,6 +100,10 @@
 		6AC2A2EE26A214EE002D1A53 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2BAF926E3C7B7004466C4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		6AC2BAFB26E3CA5D004466C4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		6AC2BB0A26E4D699004466C4 /* SortPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPopoverViewController.swift; sourceTree = "<group>"; };
+		6AC2BB0B26E4D699004466C4 /* SortPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPopoverViewController.xib; sourceTree = "<group>"; };
+		6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeteoriteAttribute+UI.swift"; sourceTree = "<group>"; };
+		6AC2BB1426E4F942004466C4 /* SortPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPopoverViewModel.swift; sourceTree = "<group>"; };
 		6AC979F626A2180600490AF9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFDF9BC26A36D7F002D167E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AFDFA4926A3715D002D167E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 		6A186B3726DFE19F00AFD5D3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6AC2BB0D26E4D6A3004466C4 /* Sort */,
 				6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */,
 				6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */,
 				6AC2BAFB26E3CA5D004466C4 /* MainViewModel.swift */,
@@ -341,6 +350,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		6AC2BB0D26E4D6A3004466C4 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				6AC2BB1326E4F8D3004466C4 /* Extension */,
+				6AC2BB0A26E4D699004466C4 /* SortPopoverViewController.swift */,
+				6AC2BB0B26E4D699004466C4 /* SortPopoverViewController.xib */,
+				6AC2BB1426E4F942004466C4 /* SortPopoverViewModel.swift */,
+			);
+			path = Sort;
+			sourceTree = "<group>";
+		};
+		6AC2BB1326E4F8D3004466C4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6AFDF9C026A36E5E002D167E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC2BB0E26E4F51C004466C4 /* SortPopoverViewController.xib in Resources */,
 				6AFF340826DBCFCA00299057 /* ListViewController.xib in Resources */,
 				6AFF340C26DBD05200299057 /* MapViewController.xib in Resources */,
 				6AFDF9BB26A36D7F002D167E /* Localizable.strings in Resources */,
@@ -616,6 +645,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC2BB0C26E4D699004466C4 /* SortPopoverViewController.swift in Sources */,
 				6AC2BAFA26E3C7B7004466C4 /* UIViewController+Extension.swift in Sources */,
 				6AFDFA4E26A3715D002D167E /* XCAssets+Generated.swift in Sources */,
 				6A186B3A26DFE1B000AFD5D3 /* MainViewController.swift in Sources */,
@@ -623,6 +653,7 @@
 				6A1F9C4026A2DF2500BB3ADA /* UITableView+Extensions.swift in Sources */,
 				6AC2BAFC26E3CA5D004466C4 /* MainViewModel.swift in Sources */,
 				6AFF340226DBCC3200299057 /* RootCoordinator.swift in Sources */,
+				6AC2BB1226E4F8CE004466C4 /* MeteoriteAttribute+UI.swift in Sources */,
 				6A1F9BFD26A22F1F00BB3ADA /* ListViewModel.swift in Sources */,
 				6AFDFA4D26A3715D002D167E /* Localization.swift in Sources */,
 				6AFDFA4C26A3715D002D167E /* Fonts.swift in Sources */,
@@ -630,6 +661,7 @@
 				6A1F9C2F26A2D8DC00BB3ADA /* ScreenAssembly.swift in Sources */,
 				6AFF340726DBCFCA00299057 /* ListViewController.swift in Sources */,
 				6AFF340B26DBD05200299057 /* MapViewController.swift in Sources */,
+				6AC2BB1526E4F942004466C4 /* SortPopoverViewModel.swift in Sources */,
 				6AFF340426DBCCFE00299057 /* MainCoordinator.swift in Sources */,
 				6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */,
 				6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */,

@@ -14,6 +14,16 @@ internal enum Localization {
   internal static let listTitle = Localization.tr("Localizable", "list_title")
   /// Map
   internal static let mapTitle = Localization.tr("Localizable", "map_title")
+  /// Class
+  internal static let sortClass = Localization.tr("Localizable", "sort_class")
+  /// Date
+  internal static let sortDate = Localization.tr("Localizable", "sort_date")
+  /// Location
+  internal static let sortLocation = Localization.tr("Localizable", "sort_location")
+  /// Mass
+  internal static let sortMass = Localization.tr("Localizable", "sort_mass")
+  /// Name
+  internal static let sortName = Localization.tr("Localizable", "sort_name")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
