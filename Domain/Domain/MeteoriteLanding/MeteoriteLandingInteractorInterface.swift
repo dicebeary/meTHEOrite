@@ -10,6 +10,11 @@ import RxSwift
 // sourcery: AutoMockable
 public protocol MeteoriteLandingInteractorInterface {
     var landings: Observable<[MeteoriteLanding]> { get }
+    var favourites: Observable<[String]> { get }
     
-    func getLandings() -> Completable
+    func fetchLandings() -> Completable
+    func fetchFavourites() -> Completable
+
+    func saveFavourite(id: String) -> Completable
+    func removeFavourite(id: String) -> Completable
 }

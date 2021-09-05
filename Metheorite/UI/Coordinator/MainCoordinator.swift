@@ -13,7 +13,6 @@ import RxSwift
 final class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
-    @Injected private var meteoriteLandingInteractor: MeteoriteLandingInteractorInterface
     private var navigationController: UINavigationController
     private let bag = DisposeBag()
     
@@ -30,14 +29,7 @@ final class MainCoordinator: Coordinator {
         
         childCoordinators.append(contentCoordinator)
         
-        setupInitialData()
         setupNavigationController()
-    }
-    
-    private func setupInitialData() {
-        meteoriteLandingInteractor.getLandings()
-            .subscribe()
-            .disposed(by: bag)
     }
     
     private func setupNavigationController() {

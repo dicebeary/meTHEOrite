@@ -19,7 +19,7 @@ final class ListViewModel {
 // MARK: - Transform data flow
 extension ListViewModel: ViewModelMappable {
     struct Input {
-//        let screenEvents: ListViewController.Events
+        let screenEvents: ListViewController.Events
     }
 
     struct Output {
@@ -28,7 +28,7 @@ extension ListViewModel: ViewModelMappable {
 
     func map(from input: Input) -> Output {
         // Listening events
-        fetchInitialData()
+        updateFavourite(by: input.screenEvents.favouriteSelected)
 
         // Gathering data
         let screenData = ListViewController.Data(items: getItems())
@@ -39,20 +39,30 @@ extension ListViewModel: ViewModelMappable {
 
 // MARK: - Event handling
 private extension ListViewModel {
-    func fetchInitialData() {
-        interactor.getLandings()
-            .subscribe()
-            .disposed(by: bag)
+    func updateFavourite(by events: ControlEvent<FavouriteToggle>) {
+        events.asObservable()
+            .flatMapLatest { [interactor] (id: String, selected: Bool) -> Completable in
+                if selected {
+                    return interactor.removeFavourite(id: id)
+                } else {
+                    return interactor.saveFavourite(id: id)
+                }
+        }
+        .subscribe()
+        .disposed(by: bag)
     }
 }
 
 // MARK: - Output helper methods
 private extension ListViewModel {
     func getItems() -> Driver<[MeteoriteCell.Data]> {
-        interactor.landings
-            .map { landings in
+        Observable.combineLatest(interactor.landings, interactor.favourites)
+            .map { landings, favourites in
                 landings.map { landing in
-                    return MeteoriteCell.Data(title: landing.name)
+                    let isFavourite = favourites.contains(landing.id)
+                    return MeteoriteCell.Data(id: landing.id,
+                                              title: landing.name,
+                                              isFavourite: isFavourite)
                 }
             }
             .asDriver(onErrorJustReturn: [])
