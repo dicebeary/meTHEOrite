@@ -23,14 +23,15 @@ extension MainViewModel: ViewModelMappable {
         let refreshButtonTapped: ControlEvent<Void>
     }
 
-    struct Output {
-        
-    }
+    struct Output {}
 
     func map(from input: Input) -> Output {
+        fetchLandings()
+        fetchFavourites()
+        
         input.refreshButtonTapped
             .bind { [weak self] in
-                self?.fetchAnnotations()
+                self?.fetchLandings()
             }
             .disposed(by: bag)
         
@@ -40,8 +41,14 @@ extension MainViewModel: ViewModelMappable {
 
 // MARK: - Event handling
 private extension MainViewModel {
-    func fetchAnnotations() {
-        interactor.getLandings()
+    func fetchLandings() {
+        interactor.fetchLandings()
+            .subscribe()
+            .disposed(by: bag)
+    }
+
+    func fetchFavourites() {
+        interactor.fetchFavourites()
             .subscribe()
             .disposed(by: bag)
     }

@@ -12,6 +12,8 @@ import RxSwift
 import RxCocoa
 import Resolver
 
+typealias FavouriteToggle = (id: String, selected: Bool)
+
 final class ListViewController: UIViewController, UISearchBarDelegate {
     // MARK: - ViewModel
     @Injected var viewModel: ListViewModel
@@ -20,14 +22,12 @@ final class ListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var searchController: UISearchController!
-    private let searchTextRelay = PublishRelay<String?>()
+    private let favouriteTapped = PublishRelay<FavouriteToggle>()
     private let bag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupNavigationBar()
         setupBindings()
     }
 }
@@ -40,31 +40,32 @@ extension ListViewController: ViewDataBinder {
 
     func bind(data: Data) {
         data.items
-            .drive(tableView.rx.items(cellIdentifier: MeteoriteCell.reuseIdentifier, cellType: MeteoriteCell.self)) { index, element, cell in
+            .drive(tableView.rx.items(cellIdentifier: MeteoriteCell.reuseIdentifier, cellType: MeteoriteCell.self)) { [weak self] index, element, cell in
+                guard let self = self else { return }
                 cell.bind(data: element)
+                cell.events.favouriteTapped
+                    .map { (element.id, $0) }
+                    .bind(to: self.favouriteTapped)
+                    .disposed(by: cell.bag)
             }.disposed(by: bag)
     }
 }
 
-//// MARK: - Providing events
-//extension ListViewController: ViewEventListener {
-//    struct Events {
-//    }
-//
-//    var events: Events {
-//        return Events(itemSelected: tableView.rx.itemSelected,
-//                      searchTextChanged: ControlEvent(events: searchTextRelay.asObservable()))
-//    }
-//}
+// MARK: - Providing events
+extension ListViewController: ViewEventListener {
+    struct Events {
+        let itemSelected: ControlEvent<IndexPath>
+        let favouriteSelected: ControlEvent<FavouriteToggle>
+    }
+
+    var events: Events {
+        return Events(itemSelected: tableView.rx.itemSelected,
+                      favouriteSelected: .init(events: self.favouriteTapped))
+    }
+}
 
 // MARK: - Setup
 private extension ListViewController {
-    func setupBindings() {
-        let input = ListViewModel.Input()
-        let output = viewModel.map(from: input)
-        bind(data: output.screenData)
-    }
-
     func setupTableView() {
         tableView.dataSource = nil
         tableView.delegate = nil
@@ -77,28 +78,9 @@ private extension ListViewController {
             }).disposed(by: bag)
     }
 
-    func setupNavigationBar() {
-        // Setup Title styles
-//        self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 17.0)]
-//        self.tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = [.font: FontFamily.Merriweather.bold.font(size: 36.0)]
-//
-//        // Setup search bar functionalities
-//        searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchBar.delegate = self
-//        searchController.searchBar.sizeToFit()
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.hidesNavigationBarDuringPresentation = true
-//        searchController.searchBar.placeholder = Localization.newsListSearchPlaceholder
-//        self.definesPresentationContext = true
-//        self.tabBarController?.navigationItem.searchController = searchController
-
-//        searchController.searchBar.rx.text
-//            .bind(to: searchTextRelay)
-//            .disposed(by: bag)
-//
-//        searchController.searchBar.rx.cancelButtonClicked
-//            .map { _ in return nil }
-//            .bind(to: searchTextRelay)
-//            .disposed(by: bag)
+    func setupBindings() {
+        let input = ListViewModel.Input(screenEvents: self.events)
+        let output = viewModel.map(from: input)
+        bind(data: output.screenData)
     }
 }

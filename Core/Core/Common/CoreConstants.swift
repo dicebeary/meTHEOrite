@@ -9,5 +9,6 @@ import Foundation
 
 enum CoreConstants {
     static let appToken = "NjVHrz99aHgaXl707t2fard03"
-    static let cacheKey = "meteoriteCacheKey"
+    static let landingsKey = "meteoriteCacheKey"
+    static let favouritesKey = "favouritesCacheKey"
 }
