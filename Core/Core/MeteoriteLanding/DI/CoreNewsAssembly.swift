@@ -29,5 +29,6 @@ public extension Resolver {
         }
         .scope(.application)
 
+        register { VerySimpleCache() }
     }
 }
