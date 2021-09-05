@@ -7,10 +7,14 @@
 
 import UIKit
 import RxSwift
+import Domain
+import Resolver
 
-final class ContentCoordinator: Coordinator {
+final class ContentCoordinator: NSObject, Coordinator {
     
     var childCoordinators = [Coordinator]()
+    
+    @Injected private var interactor: MeteoriteLandingInteractorInterface
     
     private var listScreen: ListViewController!
     private var mapScreen: MapViewController!
@@ -20,6 +24,8 @@ final class ContentCoordinator: Coordinator {
     
     init(containerViewController: MainViewController) {
         self.containerViewController = containerViewController
+        super.init()
+
         self.containerViewController.screenDelegate = self
     }
     
@@ -33,8 +39,8 @@ final class ContentCoordinator: Coordinator {
     }
 }
 
-// MARK: - MainScreenDelegate
-extension ContentCoordinator: MainScreenDelegate {
+// MARK: - MainScreenDelegate, PopoverControllerDelegate
+extension ContentCoordinator: MainScreenDelegate, UIPopoverPresentationControllerDelegate {
     func segmentDidChange(index: Int) {
         switch index {
         case 0:
@@ -48,7 +54,40 @@ extension ContentCoordinator: MainScreenDelegate {
         }
     }
 
-    func sortButtonTapped() {
-        print("sort")
+    func sortButtonTapped(sender: UIBarButtonItem) {
+        let popoverScreen = SortPopoverViewController()
+        popoverScreen.screenDelegate = self
+        popoverScreen.modalPresentationStyle = .popover
+
+        let popover = popoverScreen.popoverPresentationController
+        popover?.barButtonItem = sender
+        popoverScreen.preferredContentSize = CGSize(width: 120, height: 220)
+        popover?.delegate = self
+        popover?.sourceView = sender.customView
+        popover?.sourceRect = sender.customView?.bounds ?? CGRect()
+        
+        containerViewController.present(popoverScreen, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        .none
+    }
+}
+
+// MARK: - SortPopoverScreenDelegate
+extension ContentCoordinator: SortPopoverScreenDelegate {
+    func itemSelected(viewController: UIViewController, at indexPath: IndexPath) {
+        interactor.sortingTypes
+            .take(1)
+            .map { $0[indexPath.row] }
+            .flatMap { [weak self] attribute -> Completable in
+                guard let self = self else { return .empty() }
+                return self.interactor.sortMeteorite(by: attribute)
+            }
+            .subscribe(onCompleted: {
+                viewController.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: bag)
+
     }
 }

@@ -11,7 +11,7 @@ public struct MeteoriteLanding {
     public let meteoriteClass: String
     public let mass: Double?
     public let fall: FallingState?
-    public let year: String
+    public let year: Date
     public let location: GeoLocation?
     
     public init(name: String,
@@ -19,7 +19,7 @@ public struct MeteoriteLanding {
                 meteoriteClass: String,
                 mass: Double?,
                 fall: FallingState?,
-                year: String,
+                year: Date,
                 location: GeoLocation?) {
         self.name = name
         self.id = id

@@ -28,7 +28,10 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
         return favouritesSubject
             .filterNil()
     }
-
+    
+    var sortingTypes: Observable<[MeteoriteAttribute]> {
+         .just(MeteoriteAttribute.allCases)
+    }
     
     func fetchLandings() -> Completable {
         return meteoriteLandingService.getMeteoriteLandings()
@@ -37,7 +40,7 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
             .map(MeteoriteLandingMapper.map)
             .flatMapCompletable { [weak landingsSubject] landings in
                 landingsSubject?.accept(landings)
-                return .complete()
+                return .empty()
             }
     }
 
@@ -50,6 +53,19 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
             completable(.completed)
             return Disposables.create()
         }
+    }
+    
+    func sortMeteorite(by attribute: MeteoriteAttribute) -> Completable {
+        landings
+            .take(1)
+            .asSingle()
+            .do(onSuccess: { [weak self] landings in
+                let sortedLandings = landings.sorted { [weak self] landing1, landing2 in
+                    return self?.sort(lhs: landing1, rhs: landing2, by: attribute) ?? false
+                }
+                self?.landingsSubject.accept(sortedLandings)
+            })
+            .asCompletable()
     }
 
     func saveFavourite(id: String) -> Completable {
@@ -73,6 +89,22 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
 
             completable(.completed)
             return Disposables.create()
+        }
+    }
+    
+    private func sort(lhs: MeteoriteLanding, rhs: MeteoriteLanding, by type: MeteoriteAttribute) -> Bool {
+        switch type {
+        case .location:
+            // TODO
+        return false
+        case .name:
+            return lhs.name < rhs.name
+        case .mass:
+            return lhs.mass ?? 0.0 < rhs.mass ?? 0.0
+        case .class:
+            return lhs.meteoriteClass < rhs.meteoriteClass
+        case .date:
+            return lhs.year < rhs.year
         }
     }
 }
