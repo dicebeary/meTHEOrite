@@ -11,12 +11,12 @@ import Domain
 import Foundation
 import RxCocoa
 import RxSwift
-@testable import Fortnightly
+@testable import Theo
 
 
-// MARK: - NavigatorInterface
+// MARK: - Coordinator
 
-open class NavigatorInterfaceMock: NavigatorInterface, Mock {
+open class CoordinatorMock: Coordinator, Mock {
     public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
         SwiftyMockyTestObserver.setup()
         self.sequencingPolicy = sequencingPolicy
@@ -54,38 +54,49 @@ open class NavigatorInterfaceMock: NavigatorInterface, Mock {
         if scopes.contains(.perform) { methodPerformValues = [] }
     }
 
+    public var childCoordinators: [Coordinator] {
+		get {	invocations.append(.p_childCoordinators_get); return __p_childCoordinators ?? givenGetterValue(.p_childCoordinators_get, "CoordinatorMock - stub value for childCoordinators was not defined") }
+		set {	invocations.append(.p_childCoordinators_set(.value(newValue))); __p_childCoordinators = newValue }
+	}
+	private var __p_childCoordinators: ([Coordinator])?
 
 
 
 
-    open func push(from viewController: UIViewController, to identifier: String) {
-        addInvocation(.m_push__from_viewControllerto_identifier(Parameter<UIViewController>.value(`viewController`), Parameter<String>.value(`identifier`)))
-		let perform = methodPerformValue(.m_push__from_viewControllerto_identifier(Parameter<UIViewController>.value(`viewController`), Parameter<String>.value(`identifier`))) as? (UIViewController, String) -> Void
-		perform?(`viewController`, `identifier`)
+
+    open func start() {
+        addInvocation(.m_start)
+		let perform = methodPerformValue(.m_start) as? () -> Void
+		perform?()
     }
 
 
     fileprivate enum MethodType {
-        case m_push__from_viewControllerto_identifier(Parameter<UIViewController>, Parameter<String>)
+        case m_start
+        case p_childCoordinators_get
+		case p_childCoordinators_set(Parameter<[Coordinator]>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_push__from_viewControllerto_identifier(let lhsViewcontroller, let lhsIdentifier), .m_push__from_viewControllerto_identifier(let rhsViewcontroller, let rhsIdentifier)):
-				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsViewcontroller, rhs: rhsViewcontroller, with: matcher), lhsViewcontroller, rhsViewcontroller, "from viewController"))
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsIdentifier, rhs: rhsIdentifier, with: matcher), lhsIdentifier, rhsIdentifier, "to identifier"))
-				return Matcher.ComparisonResult(results)
+            case (.m_start, .m_start): return .match
+            case (.p_childCoordinators_get,.p_childCoordinators_get): return Matcher.ComparisonResult.match
+			case (.p_childCoordinators_set(let left),.p_childCoordinators_set(let right)): return Matcher.ComparisonResult([Matcher.ParameterComparisonResult(Parameter<[Coordinator]>.compare(lhs: left, rhs: right, with: matcher), left, right, "newValue")])
+            default: return .none
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case let .m_push__from_viewControllerto_identifier(p0, p1): return p0.intValue + p1.intValue
+            case .m_start: return 0
+            case .p_childCoordinators_get: return 0
+			case .p_childCoordinators_set(let newValue): return newValue.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_push__from_viewControllerto_identifier: return ".push(from:to:)"
+            case .m_start: return ".start()"
+            case .p_childCoordinators_get: return "[get] .childCoordinators"
+			case .p_childCoordinators_set: return "[set] .childCoordinators"
             }
         }
     }
@@ -98,21 +109,26 @@ open class NavigatorInterfaceMock: NavigatorInterface, Mock {
             super.init(products)
         }
 
+        public static func childCoordinators(getter defaultValue: [Coordinator]...) -> PropertyStub {
+            return Given(method: .p_childCoordinators_get, products: defaultValue.map({ StubProduct.return($0 as Any) }))
+        }
 
     }
 
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func push(from viewController: Parameter<UIViewController>, to identifier: Parameter<String>) -> Verify { return Verify(method: .m_push__from_viewControllerto_identifier(`viewController`, `identifier`))}
+        public static func start() -> Verify { return Verify(method: .m_start)}
+        public static var childCoordinators: Verify { return Verify(method: .p_childCoordinators_get) }
+		public static func childCoordinators(set newValue: Parameter<[Coordinator]>) -> Verify { return Verify(method: .p_childCoordinators_set(newValue)) }
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func push(from viewController: Parameter<UIViewController>, to identifier: Parameter<String>, perform: @escaping (UIViewController, String) -> Void) -> Perform {
-            return Perform(method: .m_push__from_viewControllerto_identifier(`viewController`, `identifier`), performs: perform)
+        public static func start(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_start, performs: perform)
         }
     }
 
@@ -189,9 +205,9 @@ open class NavigatorInterfaceMock: NavigatorInterface, Mock {
     }
 }
 
-// MARK: - NewsInteractorInterface
+// MARK: - MeteoriteLandingInteractorInterface
 
-open class NewsInteractorInterfaceMock: NewsInteractorInterface, Mock {
+open class MeteoriteLandingInteractorInterfaceMock: MeteoriteLandingInteractorInterface, Mock {
     public init(sequencing sequencingPolicy: SequencingPolicy = .lastWrittenResolvedFirst, stubbing stubbingPolicy: StubbingPolicy = .wrap, file: StaticString = #file, line: UInt = #line) {
         SwiftyMockyTestObserver.setup()
         self.sequencingPolicy = sequencingPolicy
@@ -229,125 +245,155 @@ open class NewsInteractorInterfaceMock: NewsInteractorInterface, Mock {
         if scopes.contains(.perform) { methodPerformValues = [] }
     }
 
+    public var landings: Observable<[MeteoriteLanding]> {
+		get {	invocations.append(.p_landings_get); return __p_landings ?? givenGetterValue(.p_landings_get, "MeteoriteLandingInteractorInterfaceMock - stub value for landings was not defined") }
+	}
+	private var __p_landings: (Observable<[MeteoriteLanding]>)?
+
+    public var favourites: Observable<[String]> {
+		get {	invocations.append(.p_favourites_get); return __p_favourites ?? givenGetterValue(.p_favourites_get, "MeteoriteLandingInteractorInterfaceMock - stub value for favourites was not defined") }
+	}
+	private var __p_favourites: (Observable<[String]>)?
+
+    public var sortingTypes: Observable<[MeteoriteAttribute]> {
+		get {	invocations.append(.p_sortingTypes_get); return __p_sortingTypes ?? givenGetterValue(.p_sortingTypes_get, "MeteoriteLandingInteractorInterfaceMock - stub value for sortingTypes was not defined") }
+	}
+	private var __p_sortingTypes: (Observable<[MeteoriteAttribute]>)?
 
 
 
 
-    open func getNews() -> Observable<[Article]> {
-        addInvocation(.m_getNews)
-		let perform = methodPerformValue(.m_getNews) as? () -> Void
-		perform?()
-		var __value: Observable<[Article]>
-		do {
-		    __value = try methodReturnValue(.m_getNews).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getNews(). Use given")
-			Failure("Stub return value not specified for getNews(). Use given")
-		}
-		return __value
-    }
 
-    open func getSelectedArticle() -> Observable<Article> {
-        addInvocation(.m_getSelectedArticle)
-		let perform = methodPerformValue(.m_getSelectedArticle) as? () -> Void
-		perform?()
-		var __value: Observable<Article>
-		do {
-		    __value = try methodReturnValue(.m_getSelectedArticle).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getSelectedArticle(). Use given")
-			Failure("Stub return value not specified for getSelectedArticle(). Use given")
-		}
-		return __value
-    }
-
-    open func fetchNews(text: String?) -> Completable {
-        addInvocation(.m_fetchNews__text_text(Parameter<String?>.value(`text`)))
-		let perform = methodPerformValue(.m_fetchNews__text_text(Parameter<String?>.value(`text`))) as? (String?) -> Void
-		perform?(`text`)
-		var __value: Completable
-		do {
-		    __value = try methodReturnValue(.m_fetchNews__text_text(Parameter<String?>.value(`text`))).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for fetchNews(text: String?). Use given")
-			Failure("Stub return value not specified for fetchNews(text: String?). Use given")
-		}
-		return __value
-    }
-
-    open func fetchSources() -> Completable {
-        addInvocation(.m_fetchSources)
-		let perform = methodPerformValue(.m_fetchSources) as? () -> Void
+    open func fetchLandings() -> Completable {
+        addInvocation(.m_fetchLandings)
+		let perform = methodPerformValue(.m_fetchLandings) as? () -> Void
 		perform?()
 		var __value: Completable
 		do {
-		    __value = try methodReturnValue(.m_fetchSources).casted()
+		    __value = try methodReturnValue(.m_fetchLandings).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for fetchSources(). Use given")
-			Failure("Stub return value not specified for fetchSources(). Use given")
+			onFatalFailure("Stub return value not specified for fetchLandings(). Use given")
+			Failure("Stub return value not specified for fetchLandings(). Use given")
 		}
 		return __value
     }
 
-    open func selectArticle(_ item: Article) -> Completable {
-        addInvocation(.m_selectArticle__item(Parameter<Article>.value(`item`)))
-		let perform = methodPerformValue(.m_selectArticle__item(Parameter<Article>.value(`item`))) as? (Article) -> Void
-		perform?(`item`)
+    open func fetchFavourites() -> Completable {
+        addInvocation(.m_fetchFavourites)
+		let perform = methodPerformValue(.m_fetchFavourites) as? () -> Void
+		perform?()
 		var __value: Completable
 		do {
-		    __value = try methodReturnValue(.m_selectArticle__item(Parameter<Article>.value(`item`))).casted()
+		    __value = try methodReturnValue(.m_fetchFavourites).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for selectArticle(_ item: Article). Use given")
-			Failure("Stub return value not specified for selectArticle(_ item: Article). Use given")
+			onFatalFailure("Stub return value not specified for fetchFavourites(). Use given")
+			Failure("Stub return value not specified for fetchFavourites(). Use given")
+		}
+		return __value
+    }
+
+    open func sortMeteorite(by attribute: MeteoriteAttribute) -> Completable {
+        addInvocation(.m_sortMeteorite__by_attribute(Parameter<MeteoriteAttribute>.value(`attribute`)))
+		let perform = methodPerformValue(.m_sortMeteorite__by_attribute(Parameter<MeteoriteAttribute>.value(`attribute`))) as? (MeteoriteAttribute) -> Void
+		perform?(`attribute`)
+		var __value: Completable
+		do {
+		    __value = try methodReturnValue(.m_sortMeteorite__by_attribute(Parameter<MeteoriteAttribute>.value(`attribute`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for sortMeteorite(by attribute: MeteoriteAttribute). Use given")
+			Failure("Stub return value not specified for sortMeteorite(by attribute: MeteoriteAttribute). Use given")
+		}
+		return __value
+    }
+
+    open func saveFavourite(id: String) -> Completable {
+        addInvocation(.m_saveFavourite__id_id(Parameter<String>.value(`id`)))
+		let perform = methodPerformValue(.m_saveFavourite__id_id(Parameter<String>.value(`id`))) as? (String) -> Void
+		perform?(`id`)
+		var __value: Completable
+		do {
+		    __value = try methodReturnValue(.m_saveFavourite__id_id(Parameter<String>.value(`id`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for saveFavourite(id: String). Use given")
+			Failure("Stub return value not specified for saveFavourite(id: String). Use given")
+		}
+		return __value
+    }
+
+    open func removeFavourite(id: String) -> Completable {
+        addInvocation(.m_removeFavourite__id_id(Parameter<String>.value(`id`)))
+		let perform = methodPerformValue(.m_removeFavourite__id_id(Parameter<String>.value(`id`))) as? (String) -> Void
+		perform?(`id`)
+		var __value: Completable
+		do {
+		    __value = try methodReturnValue(.m_removeFavourite__id_id(Parameter<String>.value(`id`))).casted()
+		} catch {
+			onFatalFailure("Stub return value not specified for removeFavourite(id: String). Use given")
+			Failure("Stub return value not specified for removeFavourite(id: String). Use given")
 		}
 		return __value
     }
 
 
     fileprivate enum MethodType {
-        case m_getNews
-        case m_getSelectedArticle
-        case m_fetchNews__text_text(Parameter<String?>)
-        case m_fetchSources
-        case m_selectArticle__item(Parameter<Article>)
+        case m_fetchLandings
+        case m_fetchFavourites
+        case m_sortMeteorite__by_attribute(Parameter<MeteoriteAttribute>)
+        case m_saveFavourite__id_id(Parameter<String>)
+        case m_removeFavourite__id_id(Parameter<String>)
+        case p_landings_get
+        case p_favourites_get
+        case p_sortingTypes_get
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_getNews, .m_getNews): return .match
+            case (.m_fetchLandings, .m_fetchLandings): return .match
 
-            case (.m_getSelectedArticle, .m_getSelectedArticle): return .match
+            case (.m_fetchFavourites, .m_fetchFavourites): return .match
 
-            case (.m_fetchNews__text_text(let lhsText), .m_fetchNews__text_text(let rhsText)):
+            case (.m_sortMeteorite__by_attribute(let lhsAttribute), .m_sortMeteorite__by_attribute(let rhsAttribute)):
 				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsText, rhs: rhsText, with: matcher), lhsText, rhsText, "text"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsAttribute, rhs: rhsAttribute, with: matcher), lhsAttribute, rhsAttribute, "by attribute"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_fetchSources, .m_fetchSources): return .match
-
-            case (.m_selectArticle__item(let lhsItem), .m_selectArticle__item(let rhsItem)):
+            case (.m_saveFavourite__id_id(let lhsId), .m_saveFavourite__id_id(let rhsId)):
 				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsItem, rhs: rhsItem, with: matcher), lhsItem, rhsItem, "_ item"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsId, rhs: rhsId, with: matcher), lhsId, rhsId, "id"))
 				return Matcher.ComparisonResult(results)
+
+            case (.m_removeFavourite__id_id(let lhsId), .m_removeFavourite__id_id(let rhsId)):
+				var results: [Matcher.ParameterComparisonResult] = []
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsId, rhs: rhsId, with: matcher), lhsId, rhsId, "id"))
+				return Matcher.ComparisonResult(results)
+            case (.p_landings_get,.p_landings_get): return Matcher.ComparisonResult.match
+            case (.p_favourites_get,.p_favourites_get): return Matcher.ComparisonResult.match
+            case (.p_sortingTypes_get,.p_sortingTypes_get): return Matcher.ComparisonResult.match
             default: return .none
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case .m_getNews: return 0
-            case .m_getSelectedArticle: return 0
-            case let .m_fetchNews__text_text(p0): return p0.intValue
-            case .m_fetchSources: return 0
-            case let .m_selectArticle__item(p0): return p0.intValue
+            case .m_fetchLandings: return 0
+            case .m_fetchFavourites: return 0
+            case let .m_sortMeteorite__by_attribute(p0): return p0.intValue
+            case let .m_saveFavourite__id_id(p0): return p0.intValue
+            case let .m_removeFavourite__id_id(p0): return p0.intValue
+            case .p_landings_get: return 0
+            case .p_favourites_get: return 0
+            case .p_sortingTypes_get: return 0
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_getNews: return ".getNews()"
-            case .m_getSelectedArticle: return ".getSelectedArticle()"
-            case .m_fetchNews__text_text: return ".fetchNews(text:)"
-            case .m_fetchSources: return ".fetchSources()"
-            case .m_selectArticle__item: return ".selectArticle(_:)"
+            case .m_fetchLandings: return ".fetchLandings()"
+            case .m_fetchFavourites: return ".fetchFavourites()"
+            case .m_sortMeteorite__by_attribute: return ".sortMeteorite(by:)"
+            case .m_saveFavourite__id_id: return ".saveFavourite(id:)"
+            case .m_removeFavourite__id_id: return ".removeFavourite(id:)"
+            case .p_landings_get: return "[get] .landings"
+            case .p_favourites_get: return "[get] .favourites"
+            case .p_sortingTypes_get: return "[get] .sortingTypes"
             }
         }
     }
@@ -360,53 +406,62 @@ open class NewsInteractorInterfaceMock: NewsInteractorInterface, Mock {
             super.init(products)
         }
 
+        public static func landings(getter defaultValue: Observable<[MeteoriteLanding]>...) -> PropertyStub {
+            return Given(method: .p_landings_get, products: defaultValue.map({ StubProduct.return($0 as Any) }))
+        }
+        public static func favourites(getter defaultValue: Observable<[String]>...) -> PropertyStub {
+            return Given(method: .p_favourites_get, products: defaultValue.map({ StubProduct.return($0 as Any) }))
+        }
+        public static func sortingTypes(getter defaultValue: Observable<[MeteoriteAttribute]>...) -> PropertyStub {
+            return Given(method: .p_sortingTypes_get, products: defaultValue.map({ StubProduct.return($0 as Any) }))
+        }
 
-        public static func getNews(willReturn: Observable<[Article]>...) -> MethodStub {
-            return Given(method: .m_getNews, products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func fetchLandings(willReturn: Completable...) -> MethodStub {
+            return Given(method: .m_fetchLandings, products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getSelectedArticle(willReturn: Observable<Article>...) -> MethodStub {
-            return Given(method: .m_getSelectedArticle, products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func fetchFavourites(willReturn: Completable...) -> MethodStub {
+            return Given(method: .m_fetchFavourites, products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func fetchNews(text: Parameter<String?>, willReturn: Completable...) -> MethodStub {
-            return Given(method: .m_fetchNews__text_text(`text`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func sortMeteorite(by attribute: Parameter<MeteoriteAttribute>, willReturn: Completable...) -> MethodStub {
+            return Given(method: .m_sortMeteorite__by_attribute(`attribute`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func fetchSources(willReturn: Completable...) -> MethodStub {
-            return Given(method: .m_fetchSources, products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func saveFavourite(id: Parameter<String>, willReturn: Completable...) -> MethodStub {
+            return Given(method: .m_saveFavourite__id_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func selectArticle(_ item: Parameter<Article>, willReturn: Completable...) -> MethodStub {
-            return Given(method: .m_selectArticle__item(`item`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func removeFavourite(id: Parameter<String>, willReturn: Completable...) -> MethodStub {
+            return Given(method: .m_removeFavourite__id_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getNews(willProduce: (Stubber<Observable<[Article]>>) -> Void) -> MethodStub {
-            let willReturn: [Observable<[Article]>] = []
-			let given: Given = { return Given(method: .m_getNews, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (Observable<[Article]>).self)
-			willProduce(stubber)
-			return given
-        }
-        public static func getSelectedArticle(willProduce: (Stubber<Observable<Article>>) -> Void) -> MethodStub {
-            let willReturn: [Observable<Article>] = []
-			let given: Given = { return Given(method: .m_getSelectedArticle, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (Observable<Article>).self)
-			willProduce(stubber)
-			return given
-        }
-        public static func fetchNews(text: Parameter<String?>, willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
+        public static func fetchLandings(willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
             let willReturn: [Completable] = []
-			let given: Given = { return Given(method: .m_fetchNews__text_text(`text`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_fetchLandings, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (Completable).self)
 			willProduce(stubber)
 			return given
         }
-        public static func fetchSources(willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
+        public static func fetchFavourites(willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
             let willReturn: [Completable] = []
-			let given: Given = { return Given(method: .m_fetchSources, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_fetchFavourites, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (Completable).self)
 			willProduce(stubber)
 			return given
         }
-        public static func selectArticle(_ item: Parameter<Article>, willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
+        public static func sortMeteorite(by attribute: Parameter<MeteoriteAttribute>, willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
             let willReturn: [Completable] = []
-			let given: Given = { return Given(method: .m_selectArticle__item(`item`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_sortMeteorite__by_attribute(`attribute`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let stubber = given.stub(for: (Completable).self)
+			willProduce(stubber)
+			return given
+        }
+        public static func saveFavourite(id: Parameter<String>, willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
+            let willReturn: [Completable] = []
+			let given: Given = { return Given(method: .m_saveFavourite__id_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let stubber = given.stub(for: (Completable).self)
+			willProduce(stubber)
+			return given
+        }
+        public static func removeFavourite(id: Parameter<String>, willProduce: (Stubber<Completable>) -> Void) -> MethodStub {
+            let willReturn: [Completable] = []
+			let given: Given = { return Given(method: .m_removeFavourite__id_id(`id`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (Completable).self)
 			willProduce(stubber)
 			return given
@@ -416,31 +471,34 @@ open class NewsInteractorInterfaceMock: NewsInteractorInterface, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getNews() -> Verify { return Verify(method: .m_getNews)}
-        public static func getSelectedArticle() -> Verify { return Verify(method: .m_getSelectedArticle)}
-        public static func fetchNews(text: Parameter<String?>) -> Verify { return Verify(method: .m_fetchNews__text_text(`text`))}
-        public static func fetchSources() -> Verify { return Verify(method: .m_fetchSources)}
-        public static func selectArticle(_ item: Parameter<Article>) -> Verify { return Verify(method: .m_selectArticle__item(`item`))}
+        public static func fetchLandings() -> Verify { return Verify(method: .m_fetchLandings)}
+        public static func fetchFavourites() -> Verify { return Verify(method: .m_fetchFavourites)}
+        public static func sortMeteorite(by attribute: Parameter<MeteoriteAttribute>) -> Verify { return Verify(method: .m_sortMeteorite__by_attribute(`attribute`))}
+        public static func saveFavourite(id: Parameter<String>) -> Verify { return Verify(method: .m_saveFavourite__id_id(`id`))}
+        public static func removeFavourite(id: Parameter<String>) -> Verify { return Verify(method: .m_removeFavourite__id_id(`id`))}
+        public static var landings: Verify { return Verify(method: .p_landings_get) }
+        public static var favourites: Verify { return Verify(method: .p_favourites_get) }
+        public static var sortingTypes: Verify { return Verify(method: .p_sortingTypes_get) }
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func getNews(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getNews, performs: perform)
+        public static func fetchLandings(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_fetchLandings, performs: perform)
         }
-        public static func getSelectedArticle(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getSelectedArticle, performs: perform)
+        public static func fetchFavourites(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_fetchFavourites, performs: perform)
         }
-        public static func fetchNews(text: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_fetchNews__text_text(`text`), performs: perform)
+        public static func sortMeteorite(by attribute: Parameter<MeteoriteAttribute>, perform: @escaping (MeteoriteAttribute) -> Void) -> Perform {
+            return Perform(method: .m_sortMeteorite__by_attribute(`attribute`), performs: perform)
         }
-        public static func fetchSources(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_fetchSources, performs: perform)
+        public static func saveFavourite(id: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
+            return Perform(method: .m_saveFavourite__id_id(`id`), performs: perform)
         }
-        public static func selectArticle(_ item: Parameter<Article>, perform: @escaping (Article) -> Void) -> Perform {
-            return Perform(method: .m_selectArticle__item(`item`), performs: perform)
+        public static func removeFavourite(id: Parameter<String>, perform: @escaping (String) -> Void) -> Perform {
+            return Perform(method: .m_removeFavourite__id_id(`id`), performs: perform)
         }
     }
 

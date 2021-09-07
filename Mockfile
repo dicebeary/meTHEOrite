@@ -10,7 +10,7 @@ MetheoriteTests:
   targets:
   - MetheoriteTests
   testable:
-  - Metheorite
+  - Theo
   import:
   - Domain
   - Foundation

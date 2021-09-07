@@ -14,7 +14,7 @@ import Resolver
 final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
     
     @Injected private var meteoriteLandingService: MeteoriteLandingServiceInterface
-    @Injected private var cache: VerySimpleCache
+    @Injected private var cache: Cacheable
 
     private var landingsSubject = BehaviorRelay<[MeteoriteLanding]?>(value: nil)
     private var favouritesSubject = BehaviorRelay<[String]?>(value: nil)
@@ -82,10 +82,11 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
     
     func removeFavourite(id: String) -> Completable {
         return Completable.create { [weak self] completable in
-            var favourites = self?.favouritesSubject.value
-            favourites = favourites?.filter { $0 != id }
-            self?.cache.save(object: favourites, forKey: CoreConstants.favouritesKey)
-            self?.favouritesSubject.accept(favourites)
+            let oldFavourites = self?.favouritesSubject.value
+            let newFavourites = oldFavourites?.filter { $0 != id }
+            print(oldFavourites, newFavourites)
+            self?.cache.save(object: newFavourites, forKey: CoreConstants.favouritesKey)
+            self?.favouritesSubject.accept(newFavourites)
 
             completable(.completed)
             return Disposables.create()

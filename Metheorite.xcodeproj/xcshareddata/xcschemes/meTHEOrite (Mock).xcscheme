@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-               BuildableName = "Placeboop.app"
-               BlueprintName = "Placeboop"
-               ReferencedContainer = "container:Placeboop.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug (Mock)"
@@ -32,10 +16,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A2FABDE26A1C5B7009BA29C"
-               BuildableName = "PlaceboopTests.xctest"
-               BlueprintName = "PlaceboopTests"
-               ReferencedContainer = "container:Placeboop.xcodeproj">
+               BlueprintIdentifier = "6AC2BB4D26E515FD004466C4"
+               BuildableName = "MetheoriteTests.xctest"
+               BlueprintName = "MetheoriteTests"
+               ReferencedContainer = "container:Metheorite.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -60,15 +44,6 @@
             ReferencedContainer = "container:Metheorite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-            BuildableName = "Placeboop.app"
-            BlueprintName = "Placeboop"
-            ReferencedContainer = "container:Placeboop.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release (Mock)"
@@ -76,16 +51,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-            BuildableName = "Placeboop.app"
-            BlueprintName = "Placeboop"
-            ReferencedContainer = "container:Placeboop.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug (Mock)">

@@ -7,7 +7,13 @@
 
 import Foundation
 
-public struct VerySimpleCache {
+// sourcery: AutoMockable
+protocol Cacheable {
+    func save<T: Codable>(object: T, forKey: String)
+    func load<T: Codable>(type: T.Type, forKey: String) -> T?
+}
+
+public struct VerySimpleCache: Cacheable {
     private var userDefaults: UserDefaults
     
     init(userDefaults: UserDefaults = UserDefaults.standard) {
