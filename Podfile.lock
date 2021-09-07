@@ -7,7 +7,7 @@ PODS:
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
-  - Nimble (9.0.0)
+  - Nimble (9.2.0)
   - Resolver (1.4.3)
   - RxBlocking (5.1.1):
     - RxSwift (~> 5)
@@ -39,12 +39,12 @@ DEPENDENCIES:
   - Alamofire
   - Kingfisher (= 6.3.0)
   - Moya/RxSwift (~> 14.0)
-  - Nimble (= 9.0.0)
+  - Nimble (= 9.2.0)
   - Resolver (= 1.4.3)
   - RxBlocking (~> 5.0)
   - RxCocoa (~> 5.0)
   - RxDataSources (~> 4.0)
-  - RxMKMapView
+  - RxMKMapView (= 5.0.0)
   - RxOptional (= 4.1.0)
   - RxSwift (~> 5.0)
   - RxTest (~> 5.0)
@@ -78,7 +78,7 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
   Resolver: c0956ef605a64f63458166653fa4ef71df5acd98
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -93,6 +93,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
   SwiftyMocky: 1fb3ceca9ded134dad4da58a0f20023d7f685ccf
 
-PODFILE CHECKSUM: 592e30fb9692d8d3379f4e2255c8605fa5c17d5c
+PODFILE CHECKSUM: a7f6ba6d62d9ad3b2c69c1efccf1193e51eaaed7
 
 COCOAPODS: 1.10.2

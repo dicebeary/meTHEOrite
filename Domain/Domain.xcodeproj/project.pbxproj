@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1BEEA29E89581794748EEF3F /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFDC57DD36B2C9BF47A711 /* Pods_Domain.framework */; };
 		631AD327888D43DA01E2B5C6 /* Pods_Domain_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E8CDE734D4283FA68A211C /* Pods_Domain_DomainTests.framework */; };
+		6A0ED67826E7D82100B42040 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67726E7D82100B42040 /* Location.swift */; };
+		6A0ED67A26E7DA3300B42040 /* UserInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67926E7DA3300B42040 /* UserInteractorInterface.swift */; };
+		6A0ED67F26E7E05200B42040 /* LocationManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67E26E7E05200B42040 /* LocationManaging.swift */; };
 		6A186B4B26E2DC3F00AFD5D3 /* MeteoriteLandingInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4A26E2DC3F00AFD5D3 /* MeteoriteLandingInteractorInterface.swift */; };
 		6A186B4D26E339F700AFD5D3 /* MeteoriteLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4C26E339F700AFD5D3 /* MeteoriteLanding.swift */; };
 		6A186B4F26E33A7000AFD5D3 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4E26E33A7000AFD5D3 /* GeoLocation.swift */; };
@@ -38,6 +41,9 @@
 		51F5341A13BC99F4F3352CD1 /* Pods-DomainTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release (mock).xcconfig"; path = "Target Support Files/Pods-DomainTests/Pods-DomainTests.release (mock).xcconfig"; sourceTree = "<group>"; };
 		5FAFDC57DD36B2C9BF47A711 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658A21BB25814251E59D754F /* Pods-DomainTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-DomainTests/Pods-DomainTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		6A0ED67726E7D82100B42040 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6A0ED67926E7DA3300B42040 /* UserInteractorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractorInterface.swift; sourceTree = "<group>"; };
+		6A0ED67E26E7E05200B42040 /* LocationManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManaging.swift; sourceTree = "<group>"; };
 		6A186B4A26E2DC3F00AFD5D3 /* MeteoriteLandingInteractorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteLandingInteractorInterface.swift; sourceTree = "<group>"; };
 		6A186B4C26E339F700AFD5D3 /* MeteoriteLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteLanding.swift; sourceTree = "<group>"; };
 		6A186B4E26E33A7000AFD5D3 /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
@@ -91,6 +97,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6A0ED67526E7D7F800B42040 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED68026E7E06600B42040 /* Model */,
+				6A0ED67E26E7E05200B42040 /* LocationManaging.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6A0ED68026E7E06600B42040 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED67726E7D82100B42040 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6A6DAC2B26A220DB00BC9964 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +127,7 @@
 			children = (
 				6A6DACAB26A2252200BC9964 /* Models */,
 				6A186B4A26E2DC3F00AFD5D3 /* MeteoriteLandingInteractorInterface.swift */,
+				6A0ED67926E7DA3300B42040 /* UserInteractorInterface.swift */,
 			);
 			path = MeteoriteLanding;
 			sourceTree = "<group>";
@@ -143,6 +167,7 @@
 		6A72EB7C26A1E79300CFAE64 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6A0ED67526E7D7F800B42040 /* Manager */,
 				6A6DACA426A224C100BC9964 /* MeteoriteLanding */,
 				6A72EB7D26A1E79300CFAE64 /* Domain.h */,
 				6A72EB7E26A1E79300CFAE64 /* Info.plist */,
@@ -356,10 +381,13 @@
 			files = (
 				6A186B4F26E33A7000AFD5D3 /* GeoLocation.swift in Sources */,
 				6A186B5A26E3535400AFD5D3 /* NASAError.swift in Sources */,
+				6A0ED67F26E7E05200B42040 /* LocationManaging.swift in Sources */,
 				6A186B4B26E2DC3F00AFD5D3 /* MeteoriteLandingInteractorInterface.swift in Sources */,
+				6A0ED67A26E7DA3300B42040 /* UserInteractorInterface.swift in Sources */,
 				6AC2BB1026E4F82A004466C4 /* MeteoriteAttribute.swift in Sources */,
 				6A186B4D26E339F700AFD5D3 /* MeteoriteLanding.swift in Sources */,
 				6A186B5126E33DCB00AFD5D3 /* FallingState.swift in Sources */,
+				6A0ED67826E7D82100B42040 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +597,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.fortnightly.DomainTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.metheorite.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -589,7 +617,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.fortnightly.DomainTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.metheorite.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -699,7 +727,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.fortnightly.DomainTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.metheorite.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -803,7 +831,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.fortnightly.DomainTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.metheorite.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

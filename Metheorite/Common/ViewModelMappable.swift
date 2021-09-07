@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Proxy protocol for gather events and emit data to UI
 protocol ViewModelMappable {
     associatedtype Input
     associatedtype Output

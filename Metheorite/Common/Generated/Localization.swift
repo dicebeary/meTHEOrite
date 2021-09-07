@@ -10,6 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localization {
+  /// N/A
+  internal static let listEmptyInfo = Localization.tr("Localizable", "list_empty_info")
+  /// %@ g
+  internal static func listMass(_ p1: Any) -> String {
+    return Localization.tr("Localizable", "list_mass", String(describing: p1))
+  }
   /// List
   internal static let listTitle = Localization.tr("Localizable", "list_title")
   /// Map

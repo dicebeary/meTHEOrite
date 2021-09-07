@@ -14,17 +14,15 @@ final class MeteoriteCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var classLabel: UILabel!
+    @IBOutlet private weak var massLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var favouriteButton: UIButton!
     
     private var isFavourite: Bool = false
     
     var id: String!
     var bag = DisposeBag()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setup()
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -41,12 +39,16 @@ extension MeteoriteCell: ViewDataBinder {
     struct Data {
         let id: String
         let title: String
+        let mass: String
+        let date: String
         let isFavourite: Bool
     }
 
     func bind(data: Data) {
         self.id = data.id
         titleLabel.text = data.title
+        massLabel.text = data.mass
+        dateLabel.text = data.date
         isFavourite = data.isFavourite
 
         let favouriteImage = isFavourite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
@@ -65,13 +67,5 @@ extension MeteoriteCell: ViewEventListener {
         let tap = favouriteButton.rx.tap
             .map { isFavourite }
         return Events(favouriteTapped: .init(events: tap))
-    }
-}
-
-// MARK: - Setup
-private extension MeteoriteCell {
-    func setup() {
-        titleLabel.textColor = UIColor.blackishColor
-        titleLabel.font = .systemFont(ofSize: 16.0)
     }
 }

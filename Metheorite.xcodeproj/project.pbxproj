@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20DF5A16839FEB1BC48F80AD /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */; };
-		59894FF6D08E8CAD63033D13 /* Pods_Metheorite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA011E642E4161184968A30B /* Pods_Metheorite.framework */; };
+		6A0ED65B26E518EF00B42040 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED65A26E518EF00B42040 /* Mock.generated.swift */; };
+		6A0ED66626E6C3F000B42040 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66526E6C3F000B42040 /* MainViewModelTests.swift */; };
+		6A0ED66826E6C4E800B42040 /* SortPopoverViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66726E6C4E800B42040 /* SortPopoverViewModelTests.swift */; };
+		6A0ED66A26E6C58B00B42040 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66926E6C58B00B42040 /* MapViewModelTests.swift */; };
+		6A0ED66C26E6C79500B42040 /* MeteoriteAttributeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66B26E6C79500B42040 /* MeteoriteAttributeUITests.swift */; };
+		6A0ED66E26E72AFE00B42040 /* RootCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66D26E72AFE00B42040 /* RootCoordinatorTests.swift */; };
+		6A0ED67026E72B0A00B42040 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED66F26E72B0A00B42040 /* MainCoordinatorTests.swift */; };
+		6A0ED67226E72B1500B42040 /* ContentCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67126E72B1500B42040 /* ContentCoordinatorTests.swift */; };
 		6A186B3A26DFE1B000AFD5D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */; };
 		6A186B3B26DFE1B000AFD5D3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */; };
 		6A186B3F26E28EC500AFD5D3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */; };
@@ -19,14 +25,10 @@
 		6A1F9C3726A2DCB800BB3ADA /* MeteoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */; };
 		6A1F9C4026A2DF2500BB3ADA /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */; };
 		6A1F9C4626A2DF5500BB3ADA /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */; };
-		6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */; };
 		6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B865B26CEA39A00310374 /* Resolver.swift */; };
 		6A2FABCD26A1C5B6009BA29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */; };
 		6A2FABD626A1C5B6009BA29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FABD526A1C5B6009BA29C /* Assets.xcassets */; };
 		6A2FABD926A1C5B6009BA29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FABD726A1C5B6009BA29C /* LaunchScreen.storyboard */; };
-		6A3F7F4E26A47CA500E1FC7C /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */; };
-		6A3F7F5626A47D2900E1FC7C /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */; };
-		6A3F7F5E26A4813300E1FC7C /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */; };
 		6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */; };
 		6A72EC9326A1F38300CFAE64 /* ViewEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */; };
 		6AC2A2EF26A214EE002D1A53 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC2A2EE26A214EE002D1A53 /* Domain.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -36,6 +38,7 @@
 		6AC2BB0E26E4F51C004466C4 /* SortPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC2BB0B26E4D699004466C4 /* SortPopoverViewController.xib */; };
 		6AC2BB1226E4F8CE004466C4 /* MeteoriteAttribute+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */; };
 		6AC2BB1526E4F942004466C4 /* SortPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB1426E4F942004466C4 /* SortPopoverViewModel.swift */; };
+		6AC2BB6026E516C8004466C4 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2BB5F26E516C8004466C4 /* ListViewModelTests.swift */; };
 		6AC979F726A2180600490AF9 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC979F626A2180600490AF9 /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6AFDF9BB26A36D7F002D167E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AFDF9BD26A36D7F002D167E /* Localizable.strings */; };
 		6AFDFA4C26A3715D002D167E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDFA4926A3715D002D167E /* Fonts.swift */; };
@@ -50,29 +53,33 @@
 		6AFF340B26DBD05200299057 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340926DBD05200299057 /* MapViewController.swift */; };
 		6AFF340C26DBD05200299057 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF340A26DBD05200299057 /* MapViewController.xib */; };
 		6AFF340E26DD5F3800299057 /* ContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF340D26DD5F3800299057 /* ContentCoordinator.swift */; };
+		8C17B6C1590316715E3D4ECD /* Pods_Metheorite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A849340FCB9539D430C844E /* Pods_Metheorite.framework */; };
+		CDF79D373CAF8B72FDBE6DAA /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86D96EE0081E1E533850282 /* Pods_Metheorite_MetheoriteTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6A2FABE026A1C5B7009BA29C /* PBXContainerItemProxy */ = {
+		6AC2BB5326E515FD004466C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6A2FABC126A1C5B6009BA29C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6A2FABC826A1C5B6009BA29C;
-			remoteInfo = Fortnightly;
+			remoteInfo = Metheorite;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
-		0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug.xcconfig"; sourceTree = "<group>"; };
-		13C0B3E6D133D872543CAF70 /* Pods-Placeboop-PlaceboopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.release.xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.release.xcconfig"; sourceTree = "<group>"; };
-		1D2EBE5E43C1E735995777CD /* Pods-Placeboop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.release.xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.release.xcconfig"; sourceTree = "<group>"; };
-		1FF3C5444135AC3EF392B14E /* Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig"; sourceTree = "<group>"; };
-		2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release.xcconfig"; sourceTree = "<group>"; };
-		2DE0A4406B9E71F006D444E8 /* Pods-Fortnightly-FortnightlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.debug.xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release (mock).xcconfig"; sourceTree = "<group>"; };
-		5453DAD615A349A989BC853D /* Pods-Placeboop-PlaceboopTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.release (mock).xcconfig"; sourceTree = "<group>"; };
-		635B30D4CDCB0A649A386CB6 /* Pods-Fortnightly.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.debug (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		04F66401C265CE7F76FA66C8 /* Pods-Metheorite.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release (mock).xcconfig"; sourceTree = "<group>"; };
+		1B88EA51042B1BBDAE5A8201 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A849340FCB9539D430C844E /* Pods_Metheorite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42F46534D945181E70A2D242 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		6A0ED65A26E518EF00B42040 /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
+		6A0ED66526E6C3F000B42040 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		6A0ED66726E6C4E800B42040 /* SortPopoverViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPopoverViewModelTests.swift; sourceTree = "<group>"; };
+		6A0ED66926E6C58B00B42040 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		6A0ED66B26E6C79500B42040 /* MeteoriteAttributeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteAttributeUITests.swift; sourceTree = "<group>"; };
+		6A0ED66D26E72AFE00B42040 /* RootCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorTests.swift; sourceTree = "<group>"; };
+		6A0ED66F26E72B0A00B42040 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
+		6A0ED67126E72B1500B42040 /* ContentCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinatorTests.swift; sourceTree = "<group>"; };
 		6A186B3826DFE1B000AFD5D3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6A186B3926DFE1B000AFD5D3 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -83,18 +90,12 @@
 		6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeteoriteCell.xib; sourceTree = "<group>"; };
 		6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewError.swift; sourceTree = "<group>"; };
 		6A2B865B26CEA39A00310374 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		6A2FABC926A1C5B6009BA29C /* Theo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A2FABD526A1C5B6009BA29C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A2FABD826A1C5B6009BA29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A2FABDA26A1C5B6009BA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetheoriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A2FABE526A1C5B7009BA29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
-		6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
-		6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
 		6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataBinder.swift; sourceTree = "<group>"; };
 		6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventListener.swift; sourceTree = "<group>"; };
 		6AC2A2EE26A214EE002D1A53 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +105,9 @@
 		6AC2BB0B26E4D699004466C4 /* SortPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPopoverViewController.xib; sourceTree = "<group>"; };
 		6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeteoriteAttribute+UI.swift"; sourceTree = "<group>"; };
 		6AC2BB1426E4F942004466C4 /* SortPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPopoverViewModel.swift; sourceTree = "<group>"; };
+		6AC2BB4E26E515FD004466C4 /* MetheoriteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetheoriteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC2BB5226E515FD004466C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AC2BB5F26E516C8004466C4 /* ListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		6AC979F626A2180600490AF9 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFDF9BC26A36D7F002D167E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AFDFA4926A3715D002D167E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -118,22 +122,12 @@
 		6AFF340926DBD05200299057 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6AFF340A26DBD05200299057 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		6AFF340D26DD5F3800299057 /* ContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCoordinator.swift; sourceTree = "<group>"; };
-		6EA9FD80D18E46AC153DB066 /* Pods-Fortnightly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.debug.xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.debug.xcconfig"; sourceTree = "<group>"; };
-		6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite_MetheoriteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FDBB681AF0868080C1B5C32 /* Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
-		880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug (mock).xcconfig"; sourceTree = "<group>"; };
-		9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; sourceTree = "<group>"; };
-		A32D5A80ADA10482402D0553 /* Pods-Placeboop-PlaceboopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.debug.xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AA011E642E4161184968A30B /* Pods_Metheorite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B53D59F8B7163BA5B46A30ED /* Pods-Fortnightly-FortnightlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly-FortnightlyTests.release.xcconfig"; path = "Target Support Files/Pods-Fortnightly-FortnightlyTests/Pods-Fortnightly-FortnightlyTests.release.xcconfig"; sourceTree = "<group>"; };
-		B77360C80229E5C4BE5AC53D /* Pods-Placeboop.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.debug (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.debug (mock).xcconfig"; sourceTree = "<group>"; };
-		B8E58C389370AA98E8A3ECBB /* Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop-PlaceboopTests/Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig"; sourceTree = "<group>"; };
-		BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release.xcconfig"; sourceTree = "<group>"; };
-		C3666602D4CC38D5E873B254 /* Pods-Fortnightly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.release.xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.release.xcconfig"; sourceTree = "<group>"; };
-		CDDC8B4964772EAE09680507 /* Pods-Fortnightly.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fortnightly.release (mock).xcconfig"; path = "Target Support Files/Pods-Fortnightly/Pods-Fortnightly.release (mock).xcconfig"; sourceTree = "<group>"; };
-		D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D3D4A10689BBB58C4E8033AA /* Pods-Placeboop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.debug.xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.debug.xcconfig"; sourceTree = "<group>"; };
-		FE822CC01BE55F439B301D34 /* Pods-Placeboop.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Placeboop.release (mock).xcconfig"; path = "Target Support Files/Pods-Placeboop/Pods-Placeboop.release (mock).xcconfig"; sourceTree = "<group>"; };
+		6E346E3453F8BF7BF940D591 /* Pods-Metheorite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.release.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.release.xcconfig"; sourceTree = "<group>"; };
+		9B56287D62A9A8E932866ECE /* Pods-Metheorite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug.xcconfig"; sourceTree = "<group>"; };
+		A33F927C48406CA4532EBF2D /* Pods-Metheorite.debug (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite.debug (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite/Pods-Metheorite.debug (mock).xcconfig"; sourceTree = "<group>"; };
+		AF173122A9663D68604EDB35 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.debug.xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C41940C2AB3DD8F994637F2B /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests.release (mock).xcconfig"; sourceTree = "<group>"; };
+		D86D96EE0081E1E533850282 /* Pods_Metheorite_MetheoriteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Metheorite_MetheoriteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,15 +137,15 @@
 			files = (
 				6AC979F726A2180600490AF9 /* Core.framework in Frameworks */,
 				6AC2A2EF26A214EE002D1A53 /* Domain.framework in Frameworks */,
-				59894FF6D08E8CAD63033D13 /* Pods_Metheorite.framework in Frameworks */,
+				8C17B6C1590316715E3D4ECD /* Pods_Metheorite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A2FABDC26A1C5B7009BA29C /* Frameworks */ = {
+		6AC2BB4B26E515FD004466C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20DF5A16839FEB1BC48F80AD /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */,
+				CDF79D373CAF8B72FDBE6DAA /* Pods_Metheorite_MetheoriteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,10 +157,56 @@
 			children = (
 				6AC979F626A2180600490AF9 /* Core.framework */,
 				6AC2A2EE26A214EE002D1A53 /* Domain.framework */,
-				AA011E642E4161184968A30B /* Pods_Metheorite.framework */,
-				6FBBABC3A197EA1ED52EAE09 /* Pods_Metheorite_MetheoriteTests.framework */,
+				2A849340FCB9539D430C844E /* Pods_Metheorite.framework */,
+				D86D96EE0081E1E533850282 /* Pods_Metheorite_MetheoriteTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A0ED65F26E6C32B00B42040 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED66D26E72AFE00B42040 /* RootCoordinatorTests.swift */,
+				6A0ED66F26E72B0A00B42040 /* MainCoordinatorTests.swift */,
+				6A0ED67126E72B1500B42040 /* ContentCoordinatorTests.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6A0ED66126E6C36000B42040 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6AC2BB5E26E516C8004466C4 /* List */,
+				6A0ED66326E6C37700B42040 /* Main */,
+				6A0ED66226E6C37000B42040 /* Map */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		6A0ED66226E6C37000B42040 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED66926E6C58B00B42040 /* MapViewModelTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6A0ED66326E6C37700B42040 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED66426E6C37E00B42040 /* Sort */,
+				6A0ED66526E6C3F000B42040 /* MainViewModelTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6A0ED66426E6C37E00B42040 /* Sort */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED66726E6C4E800B42040 /* SortPopoverViewModelTests.swift */,
+				6A0ED66B26E6C79500B42040 /* MeteoriteAttributeUITests.swift */,
+			);
+			path = Sort;
 			sourceTree = "<group>";
 		};
 		6A186B3626DFE07100AFD5D3 /* Screen */ = {
@@ -229,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2FABCB26A1C5B6009BA29C /* Metheorite */,
-				6A2FABE226A1C5B7009BA29C /* MetheoriteTests */,
+				6AC2BB4F26E515FD004466C4 /* MetheoriteTests */,
 				6A2FABCA26A1C5B6009BA29C /* Products */,
 				9FCC74098B03BBFD4AA51439 /* Pods */,
 				688F40ECE706E1903649DDAC /* Frameworks */,
@@ -240,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2FABC926A1C5B6009BA29C /* Theo.app */,
-				6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */,
+				6AC2BB4E26E515FD004466C4 /* MetheoriteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,41 +296,6 @@
 				6A2FABDA26A1C5B6009BA29C /* Info.plist */,
 			);
 			path = Metheorite;
-			sourceTree = "<group>";
-		};
-		6A2FABE226A1C5B7009BA29C /* MetheoriteTests */ = {
-			isa = PBXGroup;
-			children = (
-				6A3F7F5526A47D2900E1FC7C /* Mock.generated.swift */,
-				6A3F7F4A26A47C8D00E1FC7C /* Screens */,
-				6A2FABE526A1C5B7009BA29C /* Info.plist */,
-			);
-			path = MetheoriteTests;
-			sourceTree = "<group>";
-		};
-		6A3F7F4A26A47C8D00E1FC7C /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				6A3F7F4C26A47C9600E1FC7C /* Details */,
-				6A3F7F4B26A47C9200E1FC7C /* List */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		6A3F7F4B26A47C9200E1FC7C /* List */ = {
-			isa = PBXGroup;
-			children = (
-				6A3F7F4D26A47CA500E1FC7C /* ListViewModelTests.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		6A3F7F4C26A47C9600E1FC7C /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				6A3F7F5D26A4813300E1FC7C /* DetailsViewModelTests.swift */,
-			);
-			path = Details;
 			sourceTree = "<group>";
 		};
 		6A4F57F226E3598C008D5D53 /* Extension */ = {
@@ -343,7 +348,6 @@
 				6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */,
 				6A2B865B26CEA39A00310374 /* Resolver.swift */,
 				6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */,
-				6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */,
 				6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */,
 				6A1F9C0026A22F3B00BB3ADA /* ViewModelMappable.swift */,
 			);
@@ -367,6 +371,33 @@
 				6AC2BB1126E4F8CE004466C4 /* MeteoriteAttribute+UI.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6AC2BB4F26E515FD004466C4 /* MetheoriteTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED65A26E518EF00B42040 /* Mock.generated.swift */,
+				6AC2BB5D26E516C8004466C4 /* UI */,
+				6AC2BB5226E515FD004466C4 /* Info.plist */,
+			);
+			path = MetheoriteTests;
+			sourceTree = "<group>";
+		};
+		6AC2BB5D26E516C8004466C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED66126E6C36000B42040 /* Screen */,
+				6A0ED65F26E6C32B00B42040 /* Coordinator */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6AC2BB5E26E516C8004466C4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				6AC2BB5F26E516C8004466C4 /* ListViewModelTests.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		6AFDF9C026A36E5E002D167E /* Resources */ = {
@@ -407,30 +438,14 @@
 		9FCC74098B03BBFD4AA51439 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6EA9FD80D18E46AC153DB066 /* Pods-Fortnightly.debug.xcconfig */,
-				635B30D4CDCB0A649A386CB6 /* Pods-Fortnightly.debug (mock).xcconfig */,
-				C3666602D4CC38D5E873B254 /* Pods-Fortnightly.release.xcconfig */,
-				CDDC8B4964772EAE09680507 /* Pods-Fortnightly.release (mock).xcconfig */,
-				2DE0A4406B9E71F006D444E8 /* Pods-Fortnightly-FortnightlyTests.debug.xcconfig */,
-				6FDBB681AF0868080C1B5C32 /* Pods-Fortnightly-FortnightlyTests.debug (mock).xcconfig */,
-				B53D59F8B7163BA5B46A30ED /* Pods-Fortnightly-FortnightlyTests.release.xcconfig */,
-				1FF3C5444135AC3EF392B14E /* Pods-Fortnightly-FortnightlyTests.release (mock).xcconfig */,
-				D3D4A10689BBB58C4E8033AA /* Pods-Placeboop.debug.xcconfig */,
-				B77360C80229E5C4BE5AC53D /* Pods-Placeboop.debug (mock).xcconfig */,
-				1D2EBE5E43C1E735995777CD /* Pods-Placeboop.release.xcconfig */,
-				FE822CC01BE55F439B301D34 /* Pods-Placeboop.release (mock).xcconfig */,
-				A32D5A80ADA10482402D0553 /* Pods-Placeboop-PlaceboopTests.debug.xcconfig */,
-				B8E58C389370AA98E8A3ECBB /* Pods-Placeboop-PlaceboopTests.debug (mock).xcconfig */,
-				13C0B3E6D133D872543CAF70 /* Pods-Placeboop-PlaceboopTests.release.xcconfig */,
-				5453DAD615A349A989BC853D /* Pods-Placeboop-PlaceboopTests.release (mock).xcconfig */,
-				0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */,
-				880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */,
-				2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */,
-				2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */,
-				D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */,
-				064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */,
-				BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */,
-				9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */,
+				9B56287D62A9A8E932866ECE /* Pods-Metheorite.debug.xcconfig */,
+				A33F927C48406CA4532EBF2D /* Pods-Metheorite.debug (mock).xcconfig */,
+				6E346E3453F8BF7BF940D591 /* Pods-Metheorite.release.xcconfig */,
+				04F66401C265CE7F76FA66C8 /* Pods-Metheorite.release (mock).xcconfig */,
+				AF173122A9663D68604EDB35 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */,
+				42F46534D945181E70A2D242 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */,
+				1B88EA51042B1BBDAE5A8201 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */,
+				C41940C2AB3DD8F994637F2B /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -442,12 +457,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A2FABF326A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "Metheorite" */;
 			buildPhases = (
-				7F03340CEA2F04AA8CD4CFFB /* [CP] Check Pods Manifest.lock */,
+				7E24263EF8E0BFE2C8BBB4E8 /* [CP] Check Pods Manifest.lock */,
 				6A2FABC526A1C5B6009BA29C /* Sources */,
 				6A2FABC626A1C5B6009BA29C /* Frameworks */,
 				6A2FABC726A1C5B6009BA29C /* Resources */,
 				6AFDF9AE26A36CEA002D167E /* Swiftgen */,
-				46D6D667430AF8778773E358 /* [CP] Embed Pods Frameworks */,
+				716C7C036A3BFAA7FE1410E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -458,24 +473,24 @@
 			productReference = 6A2FABC926A1C5B6009BA29C /* Theo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A2FABDE26A1C5B7009BA29C /* MetheoriteTests */ = {
+		6AC2BB4D26E515FD004466C4 /* MetheoriteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A2FABF626A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "MetheoriteTests" */;
+			buildConfigurationList = 6AC2BB5526E515FD004466C4 /* Build configuration list for PBXNativeTarget "MetheoriteTests" */;
 			buildPhases = (
-				0EDBF59B5D4B64D4537D989A /* [CP] Check Pods Manifest.lock */,
-				6A2FABDB26A1C5B7009BA29C /* Sources */,
-				6A2FABDC26A1C5B7009BA29C /* Frameworks */,
-				6A2FABDD26A1C5B7009BA29C /* Resources */,
-				9570D783547067EA706505B2 /* [CP] Embed Pods Frameworks */,
+				6B5F5D01EDBF11D36714632B /* [CP] Check Pods Manifest.lock */,
+				6AC2BB4A26E515FD004466C4 /* Sources */,
+				6AC2BB4B26E515FD004466C4 /* Frameworks */,
+				6AC2BB4C26E515FD004466C4 /* Resources */,
+				37FA13B423EC68284F9A17CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6A2FABE126A1C5B7009BA29C /* PBXTargetDependency */,
+				6AC2BB5426E515FD004466C4 /* PBXTargetDependency */,
 			);
 			name = MetheoriteTests;
-			productName = FortnightlyTests;
-			productReference = 6A2FABDF26A1C5B7009BA29C /* MetheoriteTests.xctest */;
+			productName = MetheoriteTests;
+			productReference = 6AC2BB4E26E515FD004466C4 /* MetheoriteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -484,15 +499,14 @@
 		6A2FABC126A1C5B6009BA29C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					6A2FABC826A1C5B6009BA29C = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					6A2FABDE26A1C5B7009BA29C = {
-						CreatedOnToolsVersion = 12.4;
-						LastSwiftMigration = 1240;
+					6AC2BB4D26E515FD004466C4 = {
+						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 6A2FABC826A1C5B6009BA29C;
 					};
 				};
@@ -511,7 +525,7 @@
 			projectRoot = "";
 			targets = (
 				6A2FABC826A1C5B6009BA29C /* Metheorite */,
-				6A2FABDE26A1C5B7009BA29C /* MetheoriteTests */,
+				6AC2BB4D26E515FD004466C4 /* MetheoriteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -532,7 +546,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A2FABDD26A1C5B7009BA29C /* Resources */ = {
+		6AC2BB4C26E515FD004466C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -542,7 +556,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EDBF59B5D4B64D4537D989A /* [CP] Check Pods Manifest.lock */ = {
+		37FA13B423EC68284F9A17CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AFDF9AE26A36CEA002D167E /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run \nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		6B5F5D01EDBF11D36714632B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,7 +613,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		46D6D667430AF8778773E358 /* [CP] Embed Pods Frameworks */ = {
+		716C7C036A3BFAA7FE1410E0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -581,25 +630,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Metheorite/Pods-Metheorite-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6AFDF9AE26A36CEA002D167E /* Swiftgen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Swiftgen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run \nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		7F03340CEA2F04AA8CD4CFFB /* [CP] Check Pods Manifest.lock */ = {
+		7E24263EF8E0BFE2C8BBB4E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -619,23 +650,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9570D783547067EA706505B2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Metheorite-MetheoriteTests/Pods-Metheorite-MetheoriteTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -664,7 +678,6 @@
 				6AC2BB1526E4F942004466C4 /* SortPopoverViewModel.swift in Sources */,
 				6AFF340426DBCCFE00299057 /* MainCoordinator.swift in Sources */,
 				6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */,
-				6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */,
 				6A1F9C0126A22F3B00BB3ADA /* ViewModelMappable.swift in Sources */,
 				6AFF340E26DD5F3800299057 /* ContentCoordinator.swift in Sources */,
 				6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */,
@@ -676,23 +689,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6A2FABDB26A1C5B7009BA29C /* Sources */ = {
+		6AC2BB4A26E515FD004466C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A3F7F5E26A4813300E1FC7C /* DetailsViewModelTests.swift in Sources */,
-				6A3F7F5626A47D2900E1FC7C /* Mock.generated.swift in Sources */,
-				6A3F7F4E26A47CA500E1FC7C /* ListViewModelTests.swift in Sources */,
+				6A0ED66826E6C4E800B42040 /* SortPopoverViewModelTests.swift in Sources */,
+				6A0ED67026E72B0A00B42040 /* MainCoordinatorTests.swift in Sources */,
+				6A0ED66E26E72AFE00B42040 /* RootCoordinatorTests.swift in Sources */,
+				6A0ED66626E6C3F000B42040 /* MainViewModelTests.swift in Sources */,
+				6A0ED65B26E518EF00B42040 /* Mock.generated.swift in Sources */,
+				6A0ED66A26E6C58B00B42040 /* MapViewModelTests.swift in Sources */,
+				6AC2BB6026E516C8004466C4 /* ListViewModelTests.swift in Sources */,
+				6A0ED67226E72B1500B42040 /* ContentCoordinatorTests.swift in Sources */,
+				6A0ED66C26E6C79500B42040 /* MeteoriteAttributeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6A2FABE126A1C5B7009BA29C /* PBXTargetDependency */ = {
+		6AC2BB5426E515FD004466C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6A2FABC826A1C5B6009BA29C /* Metheorite */;
-			targetProxy = 6A2FABE026A1C5B7009BA29C /* PBXContainerItemProxy */;
+			targetProxy = 6AC2BB5326E515FD004466C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -834,10 +853,11 @@
 		};
 		6A2FABF426A1C5B7009BA29C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C1FA85ADECC4217E328CF2F /* Pods-Metheorite.debug.xcconfig */;
+			baseConfigurationReference = 9B56287D62A9A8E932866ECE /* Pods-Metheorite.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
 				INFOPLIST_FILE = Metheorite/Info.plist;
@@ -848,6 +868,7 @@
 				PREFIX = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite;
 				PRODUCT_NAME = "Theo$(PREFIX)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -855,10 +876,11 @@
 		};
 		6A2FABF526A1C5B7009BA29C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B686F06F45941233AA1D380 /* Pods-Metheorite.release.xcconfig */;
+			baseConfigurationReference = 6E346E3453F8BF7BF940D591 /* Pods-Metheorite.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
 				INFOPLIST_FILE = Metheorite/Info.plist;
@@ -869,53 +891,9 @@
 				PREFIX = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite;
 				PRODUCT_NAME = "Theo$(PREFIX)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		6A2FABF726A1C5B7009BA29C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3A8B02B0B8FB97FBA352BF9 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
-				INFOPLIST_FILE = FortnightlyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
-			};
-			name = Debug;
-		};
-		6A2FABF826A1C5B7009BA29C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB6E1F8ACB796578DC1CF9C8 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
-				INFOPLIST_FILE = FortnightlyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
 			};
 			name = Release;
 		};
@@ -982,10 +960,11 @@
 		};
 		6A7D71B526A4567E004CB3ED /* Debug (Mock) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 880D88CC5400C678C24ECDC5 /* Pods-Metheorite.debug (mock).xcconfig */;
+			baseConfigurationReference = A33F927C48406CA4532EBF2D /* Pods-Metheorite.debug (mock).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
 				INFOPLIST_FILE = Metheorite/Info.plist;
@@ -996,31 +975,9 @@
 				PREFIX = "-Mock";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite.mock;
 				PRODUCT_NAME = "Theo$(PREFIX)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Debug (Mock)";
-		};
-		6A7D71B626A4567E004CB3ED /* Debug (Mock) */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 064EEA0D53F7C934B9FECF69 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
-				INFOPLIST_FILE = FortnightlyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
 			};
 			name = "Debug (Mock)";
 		};
@@ -1081,10 +1038,11 @@
 		};
 		6A7D71B826A45688004CB3ED /* Release (Mock) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EC21137A83C6F37F108179B /* Pods-Metheorite.release (mock).xcconfig */;
+			baseConfigurationReference = 04F66401C265CE7F76FA66C8 /* Pods-Metheorite.release (mock).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
 				INFOPLIST_FILE = Metheorite/Info.plist;
@@ -1095,30 +1053,97 @@
 				PREFIX = "-Mock";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.Metheorite.mock;
 				PRODUCT_NAME = "Theo$(PREFIX)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release (Mock)";
 		};
-		6A7D71B926A45688004CB3ED /* Release (Mock) */ = {
+		6AC2BB5626E515FD004466C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9241FAFD1712FF27BFEB3568 /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */;
+			baseConfigurationReference = AF173122A9663D68604EDB35 /* Pods-Metheorite-MetheoriteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
-				INFOPLIST_FILE = FortnightlyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_FILE = MetheoriteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.FortnightlyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.MetheoriteTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Metheorite.app/Metheorite";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Theo.app/Theo";
+			};
+			name = Debug;
+		};
+		6AC2BB5726E515FD004466C4 /* Debug (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42F46534D945181E70A2D242 /* Pods-Metheorite-MetheoriteTests.debug (mock).xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = MetheoriteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.MetheoriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Theo.app/Theo";
+			};
+			name = "Debug (Mock)";
+		};
+		6AC2BB5826E515FD004466C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B88EA51042B1BBDAE5A8201 /* Pods-Metheorite-MetheoriteTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = MetheoriteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.MetheoriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Theo.app/Theo";
+			};
+			name = Release;
+		};
+		6AC2BB5926E515FD004466C4 /* Release (Mock) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C41940C2AB3DD8F994637F2B /* Pods-Metheorite-MetheoriteTests.release (mock).xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2ZER4CQ9S;
+				INFOPLIST_FILE = MetheoriteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kvajda.MetheoriteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Theo.app/Theo";
 			};
 			name = "Release (Mock)";
 		};
@@ -1147,13 +1172,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A2FABF626A1C5B7009BA29C /* Build configuration list for PBXNativeTarget "MetheoriteTests" */ = {
+		6AC2BB5526E515FD004466C4 /* Build configuration list for PBXNativeTarget "MetheoriteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A2FABF726A1C5B7009BA29C /* Debug */,
-				6A7D71B626A4567E004CB3ED /* Debug (Mock) */,
-				6A2FABF826A1C5B7009BA29C /* Release */,
-				6A7D71B926A45688004CB3ED /* Release (Mock) */,
+				6AC2BB5626E515FD004466C4 /* Debug */,
+				6AC2BB5726E515FD004466C4 /* Debug (Mock) */,
+				6AC2BB5826E515FD004466C4 /* Release */,
+				6AC2BB5926E515FD004466C4 /* Release (Mock) */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
