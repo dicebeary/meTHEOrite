@@ -16,19 +16,26 @@ import Resolver
 @testable import Theo
 
 class MapViewModelTests: XCTestCase {
-    var interactor: MeteoriteLandingInteractorInterfaceMock!
+    var landingInteractor: MeteoriteLandingInteractorInterfaceMock!
+    var userInteractor: UserInteractorInterfaceMock!
     var sut: MapViewModel!
 
     override func setUp() {
         super.setUp()
-        interactor = MeteoriteLandingInteractorInterfaceMock()
-        Resolver.register { self.interactor }
+        landingInteractor = MeteoriteLandingInteractorInterfaceMock()
+        Resolver.register { self.landingInteractor }
             .implements(MeteoriteLandingInteractorInterface.self)
+        
+        userInteractor = UserInteractorInterfaceMock()
+        Resolver.register { self.userInteractor }
+            .implements(UserInteractorInterface.self)
+
         sut = MapViewModel()
     }
 
     override func tearDown() {
-        interactor = nil
+        landingInteractor = nil
+        userInteractor = nil
         sut = nil
         super.tearDown()
     }
@@ -37,7 +44,8 @@ class MapViewModelTests: XCTestCase {
 extension MapViewModelTests {
     func testIdleState() throws {
         // Arrange
-        Given(interactor, .landings(getter: .just(mockLandings)))
+        Given(landingInteractor, .landings(getter: .just(mockLandings)))
+        Given(userInteractor, .userLocation(getter: .just(nil)))
         
         // Act
         let output = sut.map(from: .init())
@@ -45,7 +53,23 @@ extension MapViewModelTests {
         let annotations = try output.pins.toBlocking(timeout: 1.0).first()
         // Assert
         expect(annotations?.count).to(equal(3))
-        Verify(interactor, .landings)
+        Verify(landingInteractor, .landings)
+    }
+
+    func testLocation() throws {
+        // Arrange
+        let givenLocation = Location(longitude: 10, latitude: 20)
+        Given(landingInteractor, .landings(getter: .just(mockLandings)))
+        Given(userInteractor, .userLocation(getter: .just(givenLocation)))
+        
+        // Act
+        let output = sut.map(from: .init())
+        
+        let location = try output.userLocation.toBlocking(timeout: 1.0).first()
+        
+        // Assert
+        expect(location?.latitude).to(equal(20))
+        expect(location?.longitude).to(equal(10))
     }
 }
 

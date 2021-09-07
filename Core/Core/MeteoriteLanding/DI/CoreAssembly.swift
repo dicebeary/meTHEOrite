@@ -5,16 +5,24 @@
 //  Created by Vajda Kristóf on 2021. 09. 05..
 //
 
-//import Swinject
 import Domain
 import Moya
 import Resolver
 
 public extension Resolver {
-    static func assembleCore() {
+    static func assembleCore() {        
+        register { LocationManager() }
+            .implements(LocationManaging.self)
+            .scope(.application)
+
+        register { UserInteractor() }
+            .implements(UserInteractorInterface.self)
+            .scope(.application)
+
         register { MeteoriteLandingInteractor() }
             .implements(MeteoriteLandingInteractorInterface.self)
             .scope(.application)
+
         register { MeteoriteLandingService() }
             .implements(MeteoriteLandingServiceInterface.self)
         register { _ -> MoyaProvider<MeteoriteLandingAPI> in

@@ -17,6 +17,7 @@ final class MapViewController: UIViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
     private let bag = DisposeBag()
+    private var userPin: MKAnnotation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,24 @@ private extension MapViewController {
         output.pins
             .drive(mapView.rx.annotations)
             .disposed(by: bag)
+        
+        output.userLocation
+            .drive(onNext: { [weak self] location in
+                if let userPin = self?.userPin {
+                    self?.mapView.removeAnnotation(userPin)
+                }
+                
+                let userPin = MKPointAnnotation()
+                self?.userPin = userPin
+                
+                userPin.coordinate = CLLocationCoordinate2D(latitude: 47.497913,
+                                                            longitude: 19.040236)
+                let region = MKCoordinateRegion(center: userPin.coordinate,
+                                                span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+                self?.mapView.setRegion(region, animated: true)
+                self?.mapView.addAnnotation(userPin)
+            })
+            .disposed(by: bag)
     }
     
 }
@@ -41,7 +60,16 @@ private extension MapViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-        view.tintColor = .green
+        
+        switch annotation {
+        case _ as MeteoriteAnnotation:
+            view.pinTintColor = .orange
+        case _ as MKPointAnnotation:
+            view.pinTintColor = .blue
+        default:
+            break
+        }
+        
         view.canShowCallout = true
         return view
     }

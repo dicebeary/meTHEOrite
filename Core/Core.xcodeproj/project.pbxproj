@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6A0ED65D26E51B8A00B42040 /* VerySimpleCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED65C26E51B8A00B42040 /* VerySimpleCacheTests.swift */; };
 		6A0ED65E26E6C19D00B42040 /* nasa.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A94F82326A2102A00C59D4A /* nasa.json */; };
+		6A0ED67B26E7DCF400B42040 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67326E7D79100B42040 /* LocationManager.swift */; };
+		6A0ED67D26E7DDAA00B42040 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED67C26E7DDAA00B42040 /* UserInteractor.swift */; };
+		6A0ED68226E7F09D00B42040 /* UserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0ED68126E7F09D00B42040 /* UserInteractorTests.swift */; };
 		6A186B4126E2D62F00AFD5D3 /* MeteoriteLandingApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4026E2D62F00AFD5D3 /* MeteoriteLandingApiModel.swift */; };
 		6A186B4326E2D6C500AFD5D3 /* GeoLocationApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4226E2D6C500AFD5D3 /* GeoLocationApiModel.swift */; };
 		6A186B4526E2D73D00AFD5D3 /* MeteoriteLandingServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A186B4426E2D73D00AFD5D3 /* MeteoriteLandingServiceInterface.swift */; };
@@ -55,6 +58,9 @@
 		327FB2E2DFFDBCDFEA8641FC /* Pods-CoreTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.release (mock).xcconfig"; path = "Target Support Files/Pods-CoreTests/Pods-CoreTests.release (mock).xcconfig"; sourceTree = "<group>"; };
 		3B902E28E70EA077BD035C2B /* Pods-Core-CoreTests.release (mock).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.release (mock).xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.release (mock).xcconfig"; sourceTree = "<group>"; };
 		6A0ED65C26E51B8A00B42040 /* VerySimpleCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerySimpleCacheTests.swift; sourceTree = "<group>"; };
+		6A0ED67326E7D79100B42040 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6A0ED67C26E7DDAA00B42040 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		6A0ED68126E7F09D00B42040 /* UserInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractorTests.swift; sourceTree = "<group>"; };
 		6A186B4026E2D62F00AFD5D3 /* MeteoriteLandingApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteLandingApiModel.swift; sourceTree = "<group>"; };
 		6A186B4226E2D6C500AFD5D3 /* GeoLocationApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationApiModel.swift; sourceTree = "<group>"; };
 		6A186B4426E2D73D00AFD5D3 /* MeteoriteLandingServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteLandingServiceInterface.swift; sourceTree = "<group>"; };
@@ -133,6 +139,14 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		6A0ED67626E7D80A00B42040 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6A0ED67326E7D79100B42040 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		6A186B5626E34A3400AFD5D3 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +210,7 @@
 		6A72EB4926A1E71500CFAE64 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				6A0ED67626E7D80A00B42040 /* Manager */,
 				6A33ACD426A212740085A815 /* Common */,
 				6A3F7F8E26A4856800E1FC7C /* Extension */,
 				6A94F7EF26A20B0B00C59D4A /* MeteoriteLanding */,
@@ -254,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				6A186B5426E33F8600AFD5D3 /* MeteoriteLandingInteractor.swift */,
+				6A0ED67C26E7DDAA00B42040 /* UserInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -307,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				6AED311F26A478E800831919 /* MeteoriteLandingInteractorTests.swift */,
+				6A0ED68126E7F09D00B42040 /* UserInteractorTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -511,6 +528,7 @@
 				6A186B4326E2D6C500AFD5D3 /* GeoLocationApiModel.swift in Sources */,
 				6A7D71B126A45307004CB3ED /* Environment.swift in Sources */,
 				6A7D721326A45B46004CB3ED /* StubbedResponse.swift in Sources */,
+				6A0ED67B26E7DCF400B42040 /* LocationManager.swift in Sources */,
 				6AC2BAFE26E3CF7B004466C4 /* VerySimpleCache.swift in Sources */,
 				6A33ACD626A212880085A815 /* CoreConstants.swift in Sources */,
 				6A186B4726E2D75800AFD5D3 /* MeteoriteLandingService.swift in Sources */,
@@ -520,6 +538,7 @@
 				6A1F9C1E26A2D2DF00BB3ADA /* CoreAssembly.swift in Sources */,
 				6A7D71AB26A452F0004CB3ED /* AppInfo.swift in Sources */,
 				6A186B4526E2D73D00AFD5D3 /* MeteoriteLandingServiceInterface.swift in Sources */,
+				6A0ED67D26E7DDAA00B42040 /* UserInteractor.swift in Sources */,
 				6A186B4126E2D62F00AFD5D3 /* MeteoriteLandingApiModel.swift in Sources */,
 				6A186B4926E2D76400AFD5D3 /* MeteoriteLandingAPI.swift in Sources */,
 			);
@@ -534,6 +553,7 @@
 				6AED312026A478E800831919 /* MeteoriteLandingInteractorTests.swift in Sources */,
 				6AC2BB1726E50A3E004466C4 /* Single+ExtensionTests.swift in Sources */,
 				6A0ED65D26E51B8A00B42040 /* VerySimpleCacheTests.swift in Sources */,
+				6A0ED68226E7F09D00B42040 /* UserInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

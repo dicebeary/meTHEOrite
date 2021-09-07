@@ -8,6 +8,7 @@
 import XCTest
 import Nimble
 import RxBlocking
+import CoreLocation
 import SwiftyMocky
 import Resolver
 @testable import Core
@@ -15,6 +16,7 @@ import Resolver
 
 class MeteoriteLandingInteractorTests: XCTestCase {
     var service: MeteoriteLandingServiceInterfaceMock!
+    var locationManager: LocationManagingMock!
     var cacheable: CacheableMock!
     var sut: MeteoriteLandingInteractorInterface!
 
@@ -22,10 +24,13 @@ class MeteoriteLandingInteractorTests: XCTestCase {
         super.setUp()
 
         cacheable = CacheableMock()
+        locationManager = LocationManagingMock()
         service = MeteoriteLandingServiceInterfaceMock()
 
         Resolver.register { self.cacheable }
             .implements(Cacheable.self)
+        Resolver.register { self.locationManager }
+            .implements(LocationManaging.self)
         Resolver.register { self.service }
             .implements(MeteoriteLandingServiceInterface.self)
 
@@ -34,6 +39,7 @@ class MeteoriteLandingInteractorTests: XCTestCase {
 
     override func tearDown() {
         service = nil
+        locationManager = nil
         cacheable = nil
         sut = nil
         super.tearDown()
@@ -109,6 +115,7 @@ class MeteoriteLandingInteractorTests: XCTestCase {
     func testSortMeteorites() throws {
         // Arrange
         Given(service, .getMeteoriteLandings(willReturn: .just(mockLandings)))
+        Given(locationManager, .userLocation(getter: .just(CLLocation(latitude: 10, longitude: 20))))
         
         // Act
         sut.fetchLandings()
