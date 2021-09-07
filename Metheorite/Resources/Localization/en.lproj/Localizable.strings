@@ -8,6 +8,8 @@
 
 // List
 "list_title" = "List";
+"list_empty_info" = "N/A";
+"list_mass" = "%@ g";
 
 // Map
 "map_title" = "Map";

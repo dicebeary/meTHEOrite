@@ -112,7 +112,10 @@ final class MeteoriteLandingInteractor: MeteoriteLandingInteractorInterface {
         case .name:
             return lhs.name < rhs.name
         case .mass:
-            return lhs.mass ?? 0.0 < rhs.mass ?? 0.0
+            guard let lhsMass = lhs.mass, let rhsMass = rhs.mass else {
+                return false
+            }
+            return lhsMass < rhsMass
         case .class:
             return lhs.meteoriteClass < rhs.meteoriteClass
         case .date:

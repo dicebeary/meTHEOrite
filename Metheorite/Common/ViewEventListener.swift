@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol ViewEventListener: class {
+/// Event collector from UI
+protocol ViewEventListener: AnyObject {
     associatedtype Events
 
     var events: Events { get }

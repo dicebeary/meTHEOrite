@@ -30,7 +30,7 @@ extension ListViewModel: ViewModelMappable {
         // Listening events
         updateFavourite(by: input.screenEvents.favouriteSelected)
 
-        // Gathering data
+        // Collecting data
         let screenData = ListViewController.Data(items: getItems())
 
         return Output(screenData: screenData)
@@ -59,9 +59,20 @@ private extension ListViewModel {
         Observable.combineLatest(interactor.landings, interactor.favourites)
             .map { landings, favourites in
                 landings.map { landing in
+                    let title = landing.name + "(\(landing.meteoriteClass))"
+                    var mass = Localization.listMass(Localization.listEmptyInfo)
+                    if let meteoriteMass = landing.mass {
+                        mass = Localization.listMass(String(Int(meteoriteMass)))
+                    }
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy/MM/dd"
+                    let date = dateFormatter.string(from: landing.year)
                     let isFavourite = favourites.contains(landing.id)
                     return MeteoriteCell.Data(id: landing.id,
-                                              title: landing.name,
+                                              title: title.uppercased(),
+                                              mass: mass,
+                                              date: date,
                                               isFavourite: isFavourite)
                 }
             }

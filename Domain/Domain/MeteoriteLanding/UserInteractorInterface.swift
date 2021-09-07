@@ -9,5 +9,6 @@ import RxSwift
 
 // sourcery: AutoMockable
 public protocol UserInteractorInterface {
+    /// Current location of user
     var userLocation: Observable<Location?> { get }
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol ViewDataBinder: class {
+/// Domain to UI mapping contract
+protocol ViewDataBinder: AnyObject {
     associatedtype Data
 
     func bind(data: Data)

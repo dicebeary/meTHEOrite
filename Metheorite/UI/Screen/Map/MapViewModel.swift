@@ -38,10 +38,6 @@ extension MapViewModel: ViewModelMappable {
     }
 }
 
-// MARK: - Event handling
-private extension MapViewModel {
-}
-
 // MARK: - Output helper methods
 private extension MapViewModel {
     func getAnnotations() -> Driver<[MeteoriteAnnotation]> {

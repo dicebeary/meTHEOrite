@@ -25,7 +25,6 @@
 		6A1F9C3726A2DCB800BB3ADA /* MeteoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */; };
 		6A1F9C4026A2DF2500BB3ADA /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */; };
 		6A1F9C4626A2DF5500BB3ADA /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */; };
-		6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */; };
 		6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B865B26CEA39A00310374 /* Resolver.swift */; };
 		6A2FABCD26A1C5B6009BA29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */; };
 		6A2FABD626A1C5B6009BA29C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2FABD526A1C5B6009BA29C /* Assets.xcassets */; };
@@ -91,7 +90,6 @@
 		6A1F9C3526A2DCB800BB3ADA /* MeteoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeteoriteCell.xib; sourceTree = "<group>"; };
 		6A1F9C3F26A2DF2500BB3ADA /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		6A1F9C4526A2DF5500BB3ADA /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewError.swift; sourceTree = "<group>"; };
 		6A2B865B26CEA39A00310374 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		6A2FABC926A1C5B6009BA29C /* Theo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2FABCC26A1C5B6009BA29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 				6A186B3E26E28EC500AFD5D3 /* Coordinator.swift */,
 				6A2B865B26CEA39A00310374 /* Resolver.swift */,
 				6A72EC8826A1F30C00CFAE64 /* ViewDataBinder.swift */,
-				6A1F9C4926A2DFC100BB3ADA /* ViewError.swift */,
 				6A72EC9226A1F38300CFAE64 /* ViewEventListener.swift */,
 				6A1F9C0026A22F3B00BB3ADA /* ViewModelMappable.swift */,
 			);
@@ -681,7 +678,6 @@
 				6AC2BB1526E4F942004466C4 /* SortPopoverViewModel.swift in Sources */,
 				6AFF340426DBCCFE00299057 /* MainCoordinator.swift in Sources */,
 				6A72EC8926A1F30C00CFAE64 /* ViewDataBinder.swift in Sources */,
-				6A1F9C4A26A2DFC100BB3ADA /* ViewError.swift in Sources */,
 				6A1F9C0126A22F3B00BB3ADA /* ViewModelMappable.swift in Sources */,
 				6AFF340E26DD5F3800299057 /* ContentCoordinator.swift in Sources */,
 				6A2B865C26CEA39A00310374 /* Resolver.swift in Sources */,
