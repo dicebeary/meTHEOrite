@@ -13,25 +13,34 @@ import SwiftyMocky
 @testable import Theo
 
 class RootCoordinatorTests: XCTestCase {
-    var interactor: MeteoriteLandingInteractorInterfaceMock!
+    var landingInteractor: MeteoriteLandingInteractorInterfaceMock!
+    var userInteractor: UserInteractorInterfaceMock!
     var sut: RootCoordinator!
     var window: UIWindow!
 
     override func setUp() {
-        interactor = MeteoriteLandingInteractorInterfaceMock()
-        Resolver.register { self.interactor }
+        landingInteractor = MeteoriteLandingInteractorInterfaceMock()
+        Resolver.register { self.landingInteractor }
             .implements(MeteoriteLandingInteractorInterface.self)
-        Given(interactor, .fetchLandings(willReturn: .empty()))
-        Given(interactor, .fetchFavourites(willReturn: .empty()))
-        Given(interactor, .landings(getter: .just([])))
-        Given(interactor, .favourites(getter: .just([])))
+
+        userInteractor = UserInteractorInterfaceMock()
+        Resolver.register { self.userInteractor }
+            .implements(UserInteractorInterface.self)
+
+
+        Given(landingInteractor, .fetchLandings(willReturn: .empty()))
+        Given(landingInteractor, .fetchFavourites(willReturn: .empty()))
+        Given(landingInteractor, .landings(getter: .just([])))
+        Given(landingInteractor, .favourites(getter: .just([])))
+        Given(userInteractor, .userLocation(getter: .just(nil)))
 
         window = UIWindow()
         sut = RootCoordinator(window: window)
     }
     
     override func tearDown() {
-        interactor = nil
+        landingInteractor = nil
+        userInteractor = nil
         window = nil
         sut = nil
     }

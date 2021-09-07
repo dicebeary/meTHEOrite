@@ -12,7 +12,8 @@ import Resolver
 import CoreLocation
 
 final class MapViewModel {
-    @Injected private var interactor: MeteoriteLandingInteractorInterface
+    @Injected private var landingInteractor: MeteoriteLandingInteractorInterface
+    @Injected private var userInteractor: UserInteractorInterface
     
     private let bag = DisposeBag()
 }
@@ -22,12 +23,18 @@ extension MapViewModel: ViewModelMappable {
     struct Input {}
 
     struct Output {
+        let userLocation: Driver<Location>
         let pins: Driver<[MeteoriteAnnotation]>
     }
 
     func map(from input: Input) -> Output {
         let annotations = getAnnotations()
-        return Output(pins: annotations)
+        let userLocation = userInteractor.userLocation
+            .observeOn(MainScheduler.asyncInstance)
+            .filterNil()
+            .asDriver(onErrorDriveWith: .empty())
+        return Output(userLocation: userLocation,
+                      pins: annotations)
     }
 }
 
@@ -38,7 +45,7 @@ private extension MapViewModel {
 // MARK: - Output helper methods
 private extension MapViewModel {
     func getAnnotations() -> Driver<[MeteoriteAnnotation]> {
-        return interactor.landings
+        return landingInteractor.landings
             .map { landings in
                 landings.compactMap { landing in
                     guard let location = landing.location else { return nil }

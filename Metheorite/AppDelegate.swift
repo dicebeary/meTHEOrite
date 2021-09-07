@@ -7,6 +7,7 @@
 
 import UIKit
 import Core
+import CoreLocation
 import Domain
 import RxSwift
 import Resolver
@@ -20,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let bag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let locationManager = Resolver.resolve(LocationManaging.self)
+        locationManager.requestPermission()
+        locationManager.startLocation()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         rootCoordinator = RootCoordinator(window: window!)
