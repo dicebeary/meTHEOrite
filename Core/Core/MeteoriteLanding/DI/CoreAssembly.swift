@@ -1,8 +1,8 @@
 //
-//  CoreNewsAssembly.swift
+//  CoreAssembly.swift
 //  Core
 //
-//  Created by Vajda Kristóf on 2021. 07. 17..
+//  Created by Vajda Kristóf on 2021. 09. 05..
 //
 
 //import Swinject
@@ -30,5 +30,6 @@ public extension Resolver {
         .scope(.application)
 
         register { VerySimpleCache() }
+            .implements(Cacheable.self)
     }
 }

@@ -8,7 +8,7 @@
 import RxSwift
 
 extension PrimitiveSequence where Trait == SingleTrait, Element: Codable {
-    func cacheResponse(to store: VerySimpleCache, as key: String) -> Single<Element> {
+    func cacheResponse(to store: Cacheable, as key: String) -> Single<Element> {
         return self.do(onSuccess: { object in
             store.save(object: object, forKey: key)
             debugPrint(type(of: object), "has been cached successful")
@@ -17,7 +17,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element: Codable {
         })
     }
     
-    func restoreResponseIfError(from store: VerySimpleCache, as key: String) -> Single<Element> {
+    func restoreResponseIfError(from store: Cacheable, as key: String) -> Single<Element> {
         return self.catchError { error in
             guard let element = store.load(type: Element.self, forKey: key) else {
                 debugPrint("Retrieving object from cache failed due to parsing error")

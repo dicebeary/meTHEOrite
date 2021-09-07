@@ -15,9 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-               BuildableName = "Placeboop.app"
-               BlueprintName = "Placeboop"
-               ReferencedContainer = "container:Placeboop.xcodeproj">
+               BuildableName = "Theo.app"
+               BlueprintName = "Metheorite"
+               ReferencedContainer = "container:Metheorite.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6AC2BB4D26E515FD004466C4"
+               BuildableName = "MetheoriteTests.xctest"
+               BlueprintName = "MetheoriteTests"
+               ReferencedContainer = "container:Metheorite.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,23 +61,12 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-            BuildableName = "Placeboop.app"
-            BlueprintName = "Placeboop"
-            ReferencedContainer = "container:Placeboop.xcodeproj">
+            BuildableName = "Theo.app"
+            BlueprintName = "Metheorite"
+            ReferencedContainer = "container:Metheorite.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6A2FABDE26A1C5B7009BA29C"
-               BuildableName = "PlaceboopTests.xctest"
-               BlueprintName = "PlaceboopTests"
-               ReferencedContainer = "container:Placeboop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO"
             testExecutionOrdering = "random">
@@ -84,6 +87,16 @@
                BuildableName = "DomainTests.xctest"
                BlueprintName = "DomainTests"
                ReferencedContainer = "container:Domain/Domain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6AC2BB4D26E515FD004466C4"
+               BuildableName = "MetheoriteTests.xctest"
+               BlueprintName = "MetheoriteTests"
+               ReferencedContainer = "container:Metheorite.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -115,16 +128,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6A2FABC826A1C5B6009BA29C"
-            BuildableName = "Placeboop.app"
-            BlueprintName = "Placeboop"
-            ReferencedContainer = "container:Placeboop.xcodeproj">
+            BuildableName = "Theo.app"
+            BlueprintName = "Metheorite"
+            ReferencedContainer = "container:Metheorite.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

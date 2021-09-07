@@ -23,7 +23,7 @@ target 'Core' do
     pod 'SwiftyMocky', '4.0.4'
     pod 'RxBlocking', '~> 5.0'
     pod 'RxTest', '~> 5.0'
-    pod 'Nimble', '9.0.0'
+    pod 'Nimble', '9.2.0'
   end
 end
 
@@ -43,7 +43,7 @@ target 'Metheorite' do
   pod 'RxCocoa', '~> 5.0'
   pod 'RxDataSources', '~> 4.0'
   pod 'RxOptional', '4.1.0'
-  pod 'RxMKMapView' '5.0.0'
+  pod 'RxMKMapView', '5.0.0'
   pod 'Kingfisher', '6.3.0'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'Resolver', '1.4.3'
@@ -54,7 +54,7 @@ target 'Metheorite' do
     pod 'SwiftyMocky', '4.0.4'
     pod 'RxBlocking', '~> 5.0'
     pod 'RxTest', '~> 5.0'
-    pod 'Nimble', '9.0.0'
+    pod 'Nimble', '9.2.0'
   end
 
 end
